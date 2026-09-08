@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:id;datatype:int,name:yil;datatype:int,name:aciklama;datatype:string,name:link;datatype:string,name:ekleyen_kullanici;datatype:string,name:eklenme_tarihi;datatype:datetime" />
+	<infoitem key="UD_rc_finansal_edit" value="name:id;datatype:int,name:yil;datatype:int,name:aciklama;datatype:string,name:link;datatype:string,name:ekleyen_kullanici;datatype:string,name:eklenme_tarihi;datatype:datetime" />
+	<infoitem key="UD_rc_finansal_duzenle" value="name:id;datatype:int,name:yil;datatype:int,name:aciklama;datatype:string,name:link;datatype:string,name:ekleyen_kullanici;datatype:string,name:eklenme_tarihi;datatype:datetime" />
+</info>

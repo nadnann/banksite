@@ -1,0 +1,41 @@
+@charset "iso-8859-9";
+.admin_table
+{
+	margin-bottom:auto;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:150px;
+	height:302px;
+	width:450px;
+	
+	
+}
+label #user_name 
+{
+	height: 18px;
+	border: 1px solid #CCC;
+	width: 120px;
+	font-family: Arial;
+	font-size: 12px;
+	color: #333;
+	padding-left: 5px;
+}
+label #user_password
+{
+	height: 18px;
+	border: 1px solid #CCC;
+	width: 120px;
+	font-family: Arial;
+	font-size: 12px;
+	color: #333;
+	padding-left: 5px;
+}
+label #button {
+	background-image: url(../images/admin_login_button.gif);
+	color: #FFF;
+	border: 1px solid #FFF;
+	font-family: Arial;
+	font-size: 12px;
+	height: 24px;
+	width: 100px;
+}

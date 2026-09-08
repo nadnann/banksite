@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+   /*.tablo ,.aciklama,#formHesap {
+	  display:none;
+   }*/
+
+#submitId:hover{
+
+     color:white;
+     background-color: #e67e22; /*Carrot*/
+
+}
+input,td,select {
+	
+	border-radius: 10px;
+	border-bottom-style:solid;
+	background-color:#E5E5E5;
+	color:black;
+}
+input:focus {
+	background-color:#e67e22;
+
+}

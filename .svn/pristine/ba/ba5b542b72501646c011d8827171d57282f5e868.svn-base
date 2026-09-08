@@ -1,0 +1,353 @@
+<?php require_once('../Connections/connection_lcl.php'); ?>
+<?php include_once '../includes/include_header_tr.php'; ?>
+
+
+<?php 
+if (isset($_POST)) {
+	$kurumTipi = htmlspecialchars($_POST["kurumTipi"]);
+	$anapara = htmlspecialchars($_POST["Anapara"]);
+	$faizOrani = htmlspecialchars($_POST["faizOrani"]);
+	$vadeBasiTarih = htmlspecialchars($_POST["vadeBasi"]);
+	$taksitSayisi = htmlspecialchars($_POST["taksitSayisi"]);
+	$taksit_Araligi = htmlspecialchars($_POST["taksit_Araligi"]);
+	$kkdf = htmlspecialchars($_POST["kkdf"]);
+	$bsmv = htmlspecialchars($_POST["bsmv"]);
+
+	$aylikFaizOrani=$faizOrani/12/100;
+
+	$aylikbrutFaizOrani = ($aylikFaizOrani*$taksit_Araligi * ( 1 + $kkdf + $bsmv)) /$taksit_Araligi;
+	$yillikbrutFaizOrani = 12 * $aylikbrutFaizOrani;
+	$aylikTaksit=$anapara*($aylikbrutFaizOrani) /(1-pow(1+($aylikbrutFaizOrani), -$taksitSayisi));
+
+	$values = array(
+			"kurumTipi" =>$kurumTipi,
+			"anapara" =>$anapara,
+			"faizOrani" =>$faizOrani,
+			"vadeBasi" =>$vadeBasiTarih,
+			"taksitSayisi" =>$taksitSayisi,
+			"taksit_Araligi" =>$taksit_Araligi,
+			"kkdf" =>$kkdf,
+			"bsmv" =>$bsmv,
+			"aylikFaizOrani"=>$aylikFaizOrani,
+			"aylikbrutFaizOrani"=>$aylikbrutFaizOrani,
+			"yillikbrutFaizOrani"=>$yillikbrutFaizOrani,
+			"aylikTaksit"=>$aylikTaksit
+	);
+	
+	
+}
+
+
+function DateAdd($interval, $number, $date)
+{
+
+	$date_time_array = getdate(strtotime($date));
+	$hours = $date_time_array["hours"];
+	$minutes = $date_time_array["minutes"];
+	$seconds = $date_time_array["seconds"];
+	$month = $date_time_array["mon"];
+	$day = $date_time_array["mday"];
+	$year = $date_time_array["year"];
+
+	switch ($interval) {
+
+		case "y":
+		case "yyyy":
+			$year+=$number;
+			break;
+		case "q":
+			$year+=($number*3);
+			break;
+		case "m":
+			$month+=$number;
+			break;
+		case "d":
+		case "w":
+			$day+=$number;
+			break;
+		case "ww":
+			$day+=($number*7);
+			break;
+		case "h":
+			$hours+=$number;
+			break;
+		case "n":
+			$minutes+=$number;
+			break;
+		case "s":
+			$seconds+=$number;
+			break;
+	}
+	$timestamp= date("Y-m-d H:i:s ", mktime($hours, $minutes, $seconds, $month, $day, $year));
+	return $timestamp;
+}
+
+function DATEDIFF($datepart, $startdate, $enddate)
+{
+	switch (strtolower($datepart)) {
+		case 'yy':
+		case 'yyyy':
+		case 'year':
+			$di = getdate($startdate);
+			$df = getdate($enddate);
+			return $df['year'] - $di['year'];
+			break;
+		case 'q':
+		case 'qq':
+		case 'quarter':
+			die("Unsupported operation");
+			break;
+		case 'n':
+		case 'mi':
+		case 'minute':
+			return round(($enddate - $startdate) / 60);
+			break;
+		case 'hh':
+		case 'hour':
+			return round(($enddate - $startdate) / 3600);
+			break;
+		case 'd':
+		case 'dd':
+		case 'day':
+			return round(($enddate - $startdate) / 86400);
+			break;
+		case 'wk':
+		case 'ww':
+		case 'week':
+			return round(($enddate - $startdate) / 604800);
+			break;
+		case 'm':
+		case 'mm':
+		case 'month':
+			$di = getdate($startdate);
+			$df = getdate($enddate);
+			return ($df['year'] - $di['year']) * 12 + ($df['mon'] - $di['mon']);
+			break;
+		default:
+			die("Unsupported operation");
+	}
+}
+function odemePlaniHazirlaTaksitli($data="")
+{
+
+	$ebal =$data['anapara'];
+	$tanapara = $ebal;
+	$ccint =0.0;
+	$caylikTaksit = 0.0;
+	//$tarih=$this->vadeBasi;
+	$oncekitarih=$data['vadeBasi'];
+	$tgun = 0;
+	$efektifFaizHesaplamaToplam = 0;
+	$bugun = date('d/m/Y');
+
+	if (abs($ebal) <= 0.01) {
+		;
+	} else {
+
+		while (abs($ebal) > 0.01) {
+			$deger = round(($ebal/$data['taksitSayisi']), 2);
+			$ebal = $data['anapara'];
+			$ccint =0.0;
+			$caylikTaksit = 0.0;
+			//$tarih=$this->vadeBasi;
+			$oncekitarih=$data['vadeBasi'];
+			//$vadeBasi = $this->kullanimTarihi;
+			$odemePlani=array();
+			$to_irr = array();
+			$to_irr_t = array();
+			$efektifFaizHesaplamaToplam = 0;
+			$tgun = 0;
+			$efek = array();
+			$gun1 = array();
+			$tanapara = $data['anapara'];
+
+			$to_irr[] = 0-$ebal;
+
+			$to_irr_t[] =  strtotime($data['vadeBasi']);
+				
+
+			$data['aylikTaksit'] = $data['aylikTaksit'] + $deger;
+			$efektifFaizHesaplamaToplam = 0;
+			for ($pnum = 1; $pnum <= $data['taksitSayisi']; $pnum++) {
+				$tarih=DateAdd('m', ($pnum)*$data['taksit_Araligi'], $data['vadeBasi']);
+
+				$odemePlani[$pnum]['VADE']=$tarih;
+
+				$bbal = $ebal;
+
+				$odemePlani[$pnum]['BBAL']=$bbal;
+
+				if ($pnum == 1) {
+					$gun=DATEDIFF('d', strtotime($data['vadeBasi']), strtotime($tarih));
+				} else {
+						
+					$gun=DATEDIFF('d', strtotime($oncekitarih), strtotime($tarih));
+
+				}
+
+				$odemePlani[$pnum]['GUN']=$gun;
+
+				$odemePlani[$pnum]['FAIZ']=round(($data['aylikFaizOrani']*12*$gun*$bbal)/360, 2);
+				$odemePlani[$pnum]['FON']=round($odemePlani[$pnum]['FAIZ']* $data['kkdf'], 2);
+				$odemePlani[$pnum]['VERGI']=round($odemePlani[$pnum]['FAIZ']* $data['bsmv'], 2);
+
+				if (abs($ebal)<= 0.5 && $pnum==$data['taksitSayisi']) {
+					$odemePlani[$pnum]['ANAPARAODEME'] = $bbal;
+				} else {
+					$odemePlani[$pnum]['ANAPARAODEME']=$data['aylikTaksit'] - round($odemePlani[$pnum]['FAIZ'], 2) - round($odemePlani[$pnum]['FON'], 2) - round($odemePlani[$pnum]['VERGI'], 2);
+				}
+
+				$odemePlani[$pnum]['TAKSIT']=round($odemePlani[$pnum]['FAIZ'], 2)+round($odemePlani[$pnum]['FON'], 2)+round($odemePlani[$pnum]['VERGI'], 2)+round($odemePlani[$pnum]['ANAPARAODEME'], 2);
+				//$to_irr_t[] = strtotime($this->odemePlani[$pnum]['VADE']);
+
+				//$to_irr[] = round($this->odemePlani[$pnum]['TAKSITYUVARLANMIS'], 2);
+				$ebal = $odemePlani[$pnum]['BBAL'] - $odemePlani[$pnum]['ANAPARAODEME'];
+
+				$odemePlani[$pnum]['TAKSITYUVARLANMIS']= $odemePlani[$pnum]['TAKSIT'];
+				if (abs($ebal)<= 0.5) {
+					$odemePlani[$pnum]['ANAPARAODEME']= $odemePlani[$pnum]['ANAPARAODEME'] + $ebal;
+					$odemePlani[$pnum]['TAKSITYUVARLANMIS']= $odemePlani[$pnum]['TAKSIT'] + $ebal;
+					//$to_irr[] = round($this->odemePlani[$pnum]['TAKSITYUVARLANMIS'], 2);
+					//$to_irr_t[] = strtotime($this->odemePlani[$pnum]['VADE']);
+					$caylikTaksit = $caylikTaksit + $data['aylikTaksit'] + $ebal;
+					$ebal = $odemePlani[$pnum]['BBAL'] - $odemePlani[$pnum]['ANAPARAODEME'];
+				} else {
+					$ebal = $odemePlani[$pnum]['BBAL'] - $odemePlani[$pnum]['ANAPARAODEME'];
+					$caylikTaksit = $caylikTaksit + $data['aylikTaksit'];
+				}
+				$to_irr[] = round($odemePlani[$pnum]['TAKSIT'], 2);
+				$to_irr_t[] = strtotime($odemePlani[$pnum]['VADE']);
+
+				$toplamOdenecek=$caylikTaksit;  //total amount paid at end of loan
+
+				$odemePlani[$pnum]['KALANBAKIYE']=$ebal;
+
+
+				$ccint = $ccint + $odemePlani[$pnum]['FAIZ'];
+				$odemePlani[$pnum]['TOPLAMFAIZ']=$ccint;
+				$odemePlani[$pnum]['TOPLAMODEME']=$caylikTaksit;
+
+				$oncekitarih=$tarih;
+			}
+		}
+
+	}
+	return $odemePlani;
+}
+
+
+
+?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="js/jquery.validationEngine-tr.js"></script>
+<link type="text/css" href="../css/style_krediHesaplama.css" rel="stylesheet" />
+<script type="text/javascript" src="../jquery/krediHesaplama_tr.js"></script>
+
+ <div id="div_icerik_template">
+<table width="960" height="300" border="0" align="center" cellpadding="4" cellspacing="7" class="table_border" id="Table_" vspace="0">
+      <tr>
+        <td width="230" height="90" align="left" valign="top"><img src="../image/image_ir/foreignletterofguarantee.jpg" width="230" height="325" class="resim" /></td>
+        <td width="730" colspan="-5" align="left" valign="top">
+<h4 id="hesaplink" align="center" class="template" >Örnek Kredi Hesaplama</h4>
+<div id ="anaHesapDiv">
+ 
+<form id ="formHesap" name="krediHesap" method="post" action="" >
+  <table width="550" align="center" class="template"  style="background-color:#E5E5E5;">
+    <tr>
+      <td><label>Kredi Türü </label>&nbsp;</td> 
+       <td><select class="kurumTip" name="kurumTipi">
+        <option value="0">Bireysel</option>
+        <option value="1">Ticari</option>
+      </select></td>
+    </tr>
+    <tr>
+      <tr>
+      <td><label>Kredi Tutarı </label>&nbsp;</td> 
+       <td><input type="text" id ="Anapara" name ="Anapara"  placeholder="Kredi Tutarı" pattern="\d*" title="Sadece rakam giriniz..!" required onblur="GirisKontrol();"><span id="UyariAnapara" style="color:Red;"> </span></td>
+    </tr>
+    <tr>
+    <td><label>Aylık Faiz Oranı </label>&nbsp;</td> 
+       <td><input type="text" class ="faizOrani" name ="faizOrani" value = "1" placeholder="Faiz Oranı" pattern="\d*+([\.,])" title="Sadece rakam giriniz..!" step="0.01" required></td>
+    </tr>
+     <tr>
+    <td><label>İlk Odeme Tarihi </label>&nbsp;</td> 
+       <td><input type="date" name ="vadeBasi" class="tarih" placeholder="vadeBasi" value="<?php echo date('Y-m-d');?>" required></td>
+    </tr>
+    <tr>
+    <td><label>Taksit Sayısı </label>&nbsp;</td> 
+       <td><input type="text" name ="taksitSayisi" id ="taksitSayisi" placeholder="Taksit Sayısı" value="1" pattern="\d*" title="Sadece rakam giriniz..!" required onblur="GirisKontrol();"><span id="UyariTaksitSayisi" style="color:Red;"> </span></td>
+    </tr>
+    <tr>
+    <td><label>Taksit Ödeme Aralığı </label>&nbsp;</td> 
+       <td><input type="text" name ="taksit_Araligi" id ="taksit_Araligi" placeholder="Taksit Aralığı" value="1" pattern="\d*" title="Sadece rakam giriniz..!" required value=1 onblur="GirisKontrol();"><span id="UyariTaksitAraligi" style="color:Red;"> </span></td>
+    </tr>
+    <tr>
+    <td><label>KKDF </label>&nbsp;</td> 
+       <td><input type="text" name ="kkdf" class ="kkdf"  placeholder="KKDF"  required readonly onblur="GirisKontrol();"><span id="UyariKKDF" style="color:Red;"></td>
+    </tr>
+    <tr>
+    <td><label>BSMV </label>&nbsp;</td> 
+       <td><input type="text" name ="bsmv" placeholder="BSMV" value="0.05" required readonly onblur="GirisKontrol();"><span id="UyariBSMV" style="color:Red;"></td>
+    </tr>
+    <tr></tr>
+    <tr>
+       <td><input type="submit"  style="width: 150px; border-radius: 50px 20px; height: 30px;" id ="submitId" value ="Hesapla"></td>
+    </tr>
+  
+  </table>
+
+</form>
+      </td>
+    
+        
+      </tr>
+    </table>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+
+<h4 align="left" class="odemePlan">Ödeme Planı</h4>
+
+
+<table class="tablo" width="100%" border="1">
+
+   <tr style="background-color: black; color:white">
+      <td align="center"><b>Taksit No</b></td>
+      <td align="center"><b>Vade</b></td>
+      <td align="center"><b>Gun</b></td>
+      <td align="center"><b>Odeme Oncesi Bakiye</b></td>
+      <td align="center"><b>Faiz</b></td>
+      <td align="center"><b>KKDF</b></td>
+      <td align="center"><b>BSMV</b></td>
+      <td align="center"><b>Taksit</b></td>
+   </tr>
+ <?php $deger = odemePlaniHazirlaTaksitli($values);?>
+ 
+     <?php  for ($i =1; $i <= $values['taksitSayisi']; $i++) { 
+     	//echo "rrr ".print_r($values, 1);
+     ?>   
+    
+     <tr>
+        <td align="center"><?php echo $i;?></td>
+        <td align="center"><?php echo date("Y-m-d", strtotime($deger[$i]['VADE']));?></td>
+        <td align="center"><?php echo $deger[$i]['GUN'];?></td>
+        <td align="center"><?php echo round($deger[$i]['BBAL'], 2);?></td>
+        <td align="center"><?php echo round($deger[$i]['FAIZ'], 2);?></td>
+        <td align="center"><?php echo round($deger[$i]['FON'], 2);?></td>
+        <td align="center"><?php echo round($deger[$i]['VERGI'], 2);?></td>
+        <td align="center"><?php echo round($deger[$i]['TAKSIT'], 2);?></td>
+     </tr>
+     <?php 
+       }
+      ?>
+     
+</table>
+<p class="aciklama"><b>&#9940;Gerçek Kredi Başvuru sırasında banka faiz oranları geçerlidir..!</b></p>
+
+</div>
+  <div/>
+

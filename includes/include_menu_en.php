@@ -1,0 +1,24 @@
+<ul id="sddm">
+	<li><a href="index.php">Home</a></li>
+	<li><a href="#" onmouseover="mopen('m1')" onmouseout="mclosetime()">About Us</a>
+		<div id="m1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()"> <a href="history.php">History&nbsp;</a> 
+		<a href="organisation.php">Organization&nbsp;&nbsp;</a> <a href="managers.php">Board Of Managers&nbsp;<a href="mission.php">Mission & Vision&nbsp;&nbsp;</a> <a href="information.php">Information Technology&nbsp;&nbsp;</a> <a href="human_resource.php">Human Resources&nbsp;</a> </div>
+	</li>
+	<li><a href="#" onmouseover="mopen('m2')" onmouseout="mclosetime()">Services Rendered</a>
+		<div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()"><a href="deposits.php" class="paraglink">Deposits&nbsp;&nbsp;&nbsp;</a><a href="investments.php">Loans&nbsp;&nbsp;&nbsp;</a> <a href="bailedclaims.php">Bailed Claims&nbsp;&nbsp;&nbsp;</a> <a href="banking_services.php">Other Banking Services&nbsp;&nbsp;&nbsp;</a> </div>
+	</li>
+	<li><a href="personelcustomer.php">Product and Service Fees</a></li>
+	<li><a href="#" onmouseover="mopen('m4')" onmouseout="mclosetime()">Branches </a>
+		<div id="m4" onmouseover="mcancelclosetime()" onmouseout="mclosetime()"> <a href="branch_istanbul.php">Istanbul Main Branch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a> 
+		<a href="branch_ankara.php">Ankara Branch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> 
+		<a href="branch_izmir.php">Izmir Branch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> </div>
+	</li>
+	
+	<li><a href="#" onmouseover="mopen('m5')" onmouseout="mclosetime()">Daily Rates</a>
+		<div id="m5" onmouseover="mcancelclosetime()" onmouseout="mclosetime()"><a href="foreign_exchange.php">Foreign Exchange&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="interest.php">Interest&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+	</li>
+	<li><a href="#" onmouseover="mopen('m6')" onmouseout="mclosetime()">Financial Reports</a>
+		<!-- <div id="m6" onmouseover="mcancelclosetime()" onmouseout="mclosetime()"><a href="financial_reports_2014.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2014&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><a href="financial_reports_2013.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="financial_reports_2012.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2012&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="financial_reports_2011.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2011&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="financial_reports_2010.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="financial_reports_2009.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2009&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="financial_reports_2008.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2008&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="financial_reports_2007.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2007&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="financial_reports_2006.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2006&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="financial_reports_2005.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2005&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> </div> -->
+		<?php include_once '../includes/inculde_financial_report.php'; ?>
+	</li>         
+</ul>

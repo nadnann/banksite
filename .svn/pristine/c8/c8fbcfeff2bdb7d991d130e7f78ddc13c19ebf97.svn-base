@@ -1,0 +1,334 @@
+<?php require_once('../Connections/connection_lcl.php'); ?>
+
+<?php
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+$colname_rc_duyuru_idg = "-1";
+if (isset($_GET['id'])) {
+  $colname_rc_duyuru_idg = strip_tags($_GET['id']);
+}
+mysql_select_db($database_connection_lcl, $connection_lcl);
+$query_rc_duyuru_idg = sprintf("SELECT * FROM duyurular_en WHERE duyuru_id = %s", GetSQLValueString($colname_rc_duyuru_idg, "int"));
+$rc_duyuru_idg = mysql_query($query_rc_duyuru_idg, $connection_lcl) or die(mysql_error());
+$row_rc_duyuru_idg = mysql_fetch_assoc($rc_duyuru_idg);
+$totalRows_rc_duyuru_idg = mysql_num_rows($rc_duyuru_idg);
+?>
+
+   
+<? 
+$_SESSION['adresler'].=$_SERVER['REQUEST_URI'];
+
+$id=$_SERVER['REMOTE_ADDR'];
+if($id) {
+$sayfalink=$_SERVER['REQUEST_URI'];
+$sayfa_adi="Human Resource CV";
+$veriyolu=mysql_pconnect("localhost","mellatba_admin","mwsite2011.");
+mysql_select_db("sayfa_en",$veriyolu);
+mysql_query("insert into sayfa_en(session_id,sayfa_link,sayfa_adi) values('$id','$sayfalink','$sayfa_adi')");
+}
+
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
+<title>Bank Mellat Turkey</title>
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../css_menu/default.css">
+<link href="../human_resource/css/style_include.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+function data_change(field) {
+     var check = true;
+     var value = field.value;
+
+     for(var i=0;i < field.value.length; ++i) {
+
+          var new_key = value.charAt(i);
+
+          if(((new_key < "0") || (new_key > "9")) && !(new_key == "")) {
+               check = false;
+               break;
+          }
+     }
+
+     if(!check) {
+	alert('Insert telephone number!');
+         // field.style.backgroundColor = "red";
+     } else {
+          field.style.backgroundColor = "white";
+     }
+}
+</script>
+</head>
+<body leftmargin="auto" rightmargin="auto" bottommargin="0">
+<table width="969" border="1" bordercolor="#000" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="968" colspan="3"><table width="969" border="0" cellpadding="0" cellspacing="0" bordercolor="#000000">
+      <tr>
+        <td width="969" align="center" valign="middle"><table width="970" border="0" align="left" cellpadding="0" cellspacing="0">
+          <tr>
+            <td><img src="../image/top_Content/top_Content_.png" alt="" width="969" height="102" border="0" /></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle"><form id="ikform" name="ikform" method="post" action="human_resource_cv.php" onSubmit="
+              
+ 
+              
+    if(this.ikform_ad.value=='')
+	{    
+    alert('Insert Name!');
+    this.ikform_ad.focus();
+    return false;
+    }
+   
+  
+  
+    if(this.ikform_soyad.value =='') {
+    alert('Insert Surname!');
+    this.ikform_soyad.focus();
+    return false;
+  }
+  
+  
+    if(this.ikform_telefon.value =='') {
+    alert('Insert telephone number!');
+    this.ikform_telefon.focus();
+    return false;
+  }
+ 	 
+  
+      if((this.ikform_email.value=='') || (this.ikform_email.value.indexOf('@',0)==-1)||(this.ikform_email.value.indexOf('.',0)==-1)) {
+    alert('Insert e-mail address!');
+    this.ikform_email.focus();
+    return true;
+
+  }
+    if(this.ikform_ogrenim.value =='0') {
+    alert('Insert Educational Status!');
+    this.ikform_ogrenim.focus();
+    return false;
+  }
+     if(this.ikform_pozisyon.value =='0') {
+    alert('Insert Applied Section!');
+    this.ikform_pozisyon.focus();
+    return false;
+  }
+    if(this.ikform_tecrube.value =='') {
+    alert('Insert Work Experience!');
+    this.ikform_tecrube.focus();
+    return false;
+  }
+    if(this.ikform_dil.value =='') {
+    alert('Insert Foreign Language!');
+    this.ikform_dil.focus();
+    return false;
+  }
+      if(this.ikform_notlar.value =='') {
+    alert('Insert Note!');
+    this.ikform_notlar.focus();
+    return false;
+  }
+  
+   return true;     
+
+              
+              ">
+
+       
+        
+        <table width="500" height="123" border="0" align="CENTER" cellpadding="4" cellspacing="7" id="Table_" vspace="0" > <tr> <td height="109" align="left" valign="top"><header class="template_baslik">HUMAN RESOURCE</header>
+        <table width="500" align="CENTER" class="table_isbasvurusu" cellspacing="2"> <tr> <td colspan="2" align="CENTER" valign="MIDDLE" bgcolor="#F3F3F3"><label for="textfield5"><b>Job Application Form</b></label></td> 
+          </tr> <tr> <td width="188" bgcolor="#F3F3F3">Name:</td> <td bgcolor="#F3F3F3" width="300"><label for="textfield5"></label><span id="sprytextfield1"><LABEL for="ikform_ad"></LABEL><input type="text" name="ikform_ad" id="ikform_ad">* Enter your name</span></td> </tr> <tr bgcolor="#F9F9F9"> <td bgcolor="#F3F3F3">Surname:</td> <td><label for="textfield6"></label><LABEL for="ikform_soyad"></LABEL><input type="text" name="ikform_soyad" id="ikform_soyad">* Enter your surname</span></span></td> </tr> <tr> <td bgcolor="#F3F3F3">Telephone:</td> <td bgcolor="#F3F3F3"><LABEL for="ikform_ad"></LABEL><LABEL for="ikform_telefon"></LABEL>
+          <input name="ikform_telefon" type="text" id="ikform_telefon"  onkeyup="data_change(this);">
+          * Enter your telephone</span></td> </tr><tr><td bgcolor="#F3F3F3">E-Mail:</td><td bgcolor="#F3F3F3"><LABEL for="ikform_soyad"></LABEL><LABEL for="ikform_email"></LABEL><input type="text" name="ikform_email" id="ikform_email" >* Enter your e-mail</span></td></tr> <tr><td bgcolor="#F3F3F3">Educational Status:</td><td bgcolor="#F3F3F3">
+        
+          <select name="ikform_ogrenim" id="ikform_ogrenim">
+            <option value="0" selected="selected" >Select</option>
+            <option value="Graduate/Doctorate">Graduate/Doctorate</option>
+            <option value="Undergraduate">Undergraduate</option>
+            <option value="Associate">Associate</option>
+          <option value="High School">High School</option>
+          <option value="Primary School">Primary School</option>
+        </select>
+        
+        </td></tr> <tr><td bgcolor="#F3F3F3">Applied Section:</td><td bgcolor="#F3F3F3"><LABEL for="ikform_pozisyon"></LABEL><select name="ikform_pozisyon" id="ikform_pozisyon">
+          <option value="0" selected="selected">Select</option>
+          <option value="Loans">Loans</option>
+          <option value="Accounting">Accounting</option>
+          <option value="Foreign Operations">Foreign Operations</option>
+          <option value="Information Technology">Information Technology</option>
+          <option value="Support Services">Support Services</option>
+          <option value="Risk Management">Risk Management</option>
+          <option value="Internal Control">Internal Control</option>
+          <option value="Fund Management">Fund Management</option>
+          <option value="Human Resource">Human Resource</option>
+        </select><LABEL for="ikform_ogrenim">Please select an item.</span></span></LABEL></td></tr><tr><td bgcolor="#F3F3F3">Work Experience:</td><td bgcolor="#F3F3F3"><LABEL for="ikform_tecrube"></LABEL><LABEL for="ikform_tecrube"></LABEL><textarea name="ikform_tecrube" id="ikform_tecrube" cols="30" rows="4"></textarea><br/>* Enter your work experience</span></td></tr><tr><td bgcolor="#F3F3F3">Foreign Language:</td><td bgcolor="#F3F3F3"><LABEL for="ikform_dil"></LABEL><LABEL for="ikform_dil"></LABEL><textarea name="ikform_dil" id="ikform_dil" cols="30" rows="4"></textarea><br/>* Enter your foreign language </span></td></tr><tr>
+                <td bgcolor="#F3F3F3">Notes:</td><td bgcolor="#F3F3F3"><LABEL for="ikform_notlar"></LABEL><LABEL for="ikform_notlar"></LABEL><textarea name="ikform_notlar" id="ikform_notlar" cols="30" rows="4"></textarea><br/>* Enter your notes</span></td></tr><tr><td bgcolor="#F3F3F3">&nbsp;</td><td bgcolor="#F3F3F3"><input type="submit" name="bt_gonder" id="bt_gonder" value="Submit"> <input type="reset" name="bt_temizle" id="bt_temizle" value="Reset"></td></tr> </table>
+              
+              <span>
+ <?
+
+ 
+    $ad=strip_tags($_POST['ikform_ad']);
+    $soyad=strip_tags($_POST['ikform_soyad']);
+	$telefon=strip_tags($_POST['ikform_telefon']);
+    $email=strip_tags($_POST['ikform_email']);
+	$ogrenim=strip_tags($_REQUEST['ikform_ogrenim']);
+    $pozisyon=strip_tags($_REQUEST['ikform_pozisyon']);
+	$tecrube=strip_tags($_POST['ikform_tecrube']);
+	$dil=strip_tags($_POST['ikform_dil']);
+    $notlar=strip_tags($_POST['ikform_notlar']);
+	$ip=$_SERVER['REMOTE_ADDR'];	
+	
+	////////////////////////////////////////////
+	//$mesaj="<b>Ad :</b> $ad <br/><b>Soyad :</b>$soyad<br/><b>Telefon : </b>$telefon <br/><b>E-mail: </b> $email <br/> <b>$ogrenim: </b> $ogrenim <br/> <b>Ba�vurdu�u Pozisyon: </b> $pozisyon <br/> <b>�� Deneyimleri: </b> $tecrube <br/> <b>Yabanc� Diller: </b> $dil <br/> <b>Notlar: </b> $notlar <br/> <b>IP Adress: </b> $ip <br/>";
+	$mesaj="<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-9' />
+<title></title>
+</head>
+<body>
+<table width='600' border='0' align='center' cellpadding='5' cellspacing='1'>
+  <tr>
+    <td colspan='2' align='center' bgcolor='#FFFFCC'>JOB APPLICATION FORM</td>
+  </tr>
+  <tr>
+    <td width='242' align='left' bgcolor='#E8E8E8'><strong>Name:</strong></td>
+    <td width='352' bgcolor='#E8E8E8'>$ad&nbsp;</td>
+  </tr>
+  <tr>
+    <td align='left' bgcolor='#E8E8E8'><strong>Surname:</strong></td>
+    <td bgcolor='#E8E8E8'>$soyad&nbsp;</td>
+  </tr>
+  <tr>
+    <td align='left' bgcolor='#E8E8E8'><strong>Telephone:</strong></td>
+    <td bgcolor='#E8E8E8'>$telefon&nbsp;</td>
+  </tr>
+  <tr>
+    <td align='left' bgcolor='#E8E8E8'><strong>E-Mail:</strong></td>
+    <td bgcolor='#E8E8E8'>$email&nbsp;</td>
+  </tr>
+  <tr>
+    <td align='left' bgcolor='#E8E8E8'><strong>Educational Status</strong></td>
+    <td bgcolor='#E8E8E8'>$ogrenim&nbsp;</td>
+  </tr>
+  <tr>
+    <td align='left' bgcolor='#E8E8E8'><strong>Applied Section</strong></td>
+    <td bgcolor='#E8E8E8'>$pozisyon&nbsp;</td>
+  </tr>
+  <tr>
+    <td align='left' bgcolor='#E8E8E8'><strong>Work Experience</strong></td>
+    <td bgcolor='#E8E8E8'>$tecrube&nbsp;</td>
+  </tr>
+  <tr>
+    <td align='left' bgcolor='#E8E8E8'><strong>Foreign Language</strong></td>
+    <td bgcolor='#E8E8E8'>$dil&nbsp;</td>
+  </tr>
+  <tr>
+    <td align='left' bgcolor='#E8E8E8'><strong>Note</strong></td>
+    <td bgcolor='#E8E8E8'>$notlar&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>";
+
+
+
+
+
+
+//strip_tags("<b>Name :</b> $ad <br/>\n<b>Surname :</b>$soyad<br/><b>\Telephone : </b>$telefon <br/><b>\nE-mail: </b> $email <br/> <b>\nEducational Status: </b> $ogrenim <br/> <b>\nApplied Section : </b> $pozisyon <br/> <b>\nWork Experience: </b> $tecrube <br/> <b>\nForeign Language: </b> $dil <br/> <b>\nNote: </b> $notlar <br/>");
+	
+
+$baslik="Job Application Form - mellatbank.com";
+
+$mailtanim = "MIME-Version: 1.0\r\n"; // bu k�s�m tan�mlama k�sm�
+$mailtanim .= "Content-type: text/html; charset=iso-8859-9\r\n";
+$mailtanim .= "From: $name <$email>\r\n";
+$mailtanim .= "Reply-To: $name <$email>\r\n";
+
+//mail('postmaster@localhost',$baslik,stripslashes($mesaj),$mailtanim));
+
+	if((empty($pozisyon)) and (empty($ogrenim)))
+	{
+	echo "Enter blank fields";	
+	}
+	else
+	{
+		if(isset($_POST['bt_gonder']) && isset($ad) && isset($soyad))
+		{
+	   
+	//mail('postmaster@localhost',$baslik,stripslashes($mesaj),$mailtanim);
+
+	$gidilecek_adres="a.jamehdor@mellatbank.com"; 
+	//mail($gidilecek_adres,$baslik,stripslashes($mesaj),$mailtanim);	  
+	mail($gidilecek_adres,$baslik,$mesaj,$mailtanim);	
+	echo "<b>Your CV send successfully!</b>";
+	echo "<script language='javascript'>alert('Your CV send successfully!');</script>";
+	/* 
+
+	CV
+ 	*/
+
+	$sayfa="ENG";
+	mysql_query("insert into cv(ad,soyad,telefon,e_mail,ogrenim_durum,bolum,tecrube,yabanci_dil,notlar,ip,sayfa) values('$ad','$soyad','$telefon','$email','$ogrenim','$pozisyon','$tecrube','$dil','$notlar','$ip','$sayfa')");
+	
+
+
+	}
+	}
+	
+    ?>
+              </span></td> </tr> </table></form></td>
+    </tr>
+
+      <tr>
+        <td align="center"><span><a href="index.php" class="paraglinkF">Main Page</a></span>
+          </td>
+      </tr>
+
+      <tr>
+        <td align="center" valign="middle" bgcolor="#333333">
+        <span id="footer" style="font-size:9px;font-family:Arial;color:#666;text-align:center; line-height:20px" >Copyright � 2011 Bank Mellat Turkey Istanbul Main Branch</span>
+        </td>
+      </tr>
+  </table></td>
+</tr>
+</table>
+</body>
+</html>
+

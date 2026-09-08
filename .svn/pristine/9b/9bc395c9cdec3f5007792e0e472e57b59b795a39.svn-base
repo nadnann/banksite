@@ -1,0 +1,30 @@
+<?php
+
+
+# FileName="Connection_php_mysql.htm"
+# Type="MYSQL"
+# HTTP="true"
+$hostname_connection_lcl = "localhost";
+$database_connection_lcl = "mellatba_mbank_wsite";
+$username_connection_lcl = "mellatba_admin";
+$password_connection_lcl ="mwsite2011.";
+$connection_lcl = mysql_pconnect($hostname_connection_lcl, $username_connection_lcl, $password_connection_lcl) or trigger_error(mysql_error(),E_USER_ERROR); 
+mysql_query("SET NAMES 'latin5'");  
+mysql_query("SET CHARACTER SET latin5");  
+mysql_query("SET COLLATION_CONNECTION = 'latin5_turkish_ci'");
+
+mysql_select_db("mellatba_mbank_wsite");
+
+date_default_timezone_set('Europe/Istanbul');
+
+@mysql_select_db($database_connection_lcl, $connection_lcl);
+
+if ($_SERVER['HTTP_ACUNETIX_PRODUCT'] ||
+    $_SERVER['HTTP_ACUNETIX_SCANNING_AGREEMENT'] ||
+    $_SERVER['HTTP_ACUNETIX_USER_AGREEMENT']) {
+        exit;
+}
+
+ob_start();
+session_start();
+?>

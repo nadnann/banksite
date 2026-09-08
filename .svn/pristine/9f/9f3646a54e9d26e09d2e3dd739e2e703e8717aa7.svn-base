@@ -1,0 +1,91 @@
+<?php require_once('../Connections/connection_lcl.php'); ?>
+<?php include_once '../includes/include_header_tr.php'; ?>
+<div id="div_icerik_template">
+
+  
+    <table width="960" height="300" border="0" align="center" cellpadding="4" cellspacing="7" class="table_border" id="Table_" vspace="0">
+      <tr>
+        <td width="230" height="90" align="left" valign="top"><img src="../image/image_ir/foreignletterofguarantee.jpg" width="230" height="325" class="resim" /></td>
+        <td width="730" colspan="-5" align="left" valign="top"><header class="template_baslik"><b>BANK MELLAT TÜRKİYE İSTANBUL MERKEZ ŞUBESİ FİNANSAL RAPORLARI</b></header><p></p>
+        <p class="parag">
+ <ul>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2024" class="paraglink">2024 Yılı</a></li>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2023" class="paraglink">2023 Yılı</a></li>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2022" class="paraglink">2022 Yılı</a></li>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2021" class="paraglink">2021 Yılı</a></li>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2020" class="paraglink">2020 Yılı</a></li>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2019" class="paraglink">2019 Yılı</a></li>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2018" class="paraglink">2018 Yılı</a></li>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2017" class="paraglink">2017 Yılı</a></li>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2016" class="paraglink">2016 Yılı</a></li>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2015" class="paraglink">2015 Yılı</a></li>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2014" class="paraglink">2014 Yılı</a></li>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2013" class="paraglink">2013 Yılı</a></li>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2012" class="paraglink">2012 Yılı</a></li>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2011" class="paraglink">2011 Yılı</a></li>
+ <li class="ul_parag"><a href="finansal_raporlar_yil.php?raporDonemi=2010" class="paraglink">2010 Yılı</a></li>
+ 
+ <!-- 
+ <li class="ul_parag"><a href="finansal_raporlar_2018.php" class="paraglink">2018 Y�l�</a></li>
+<li class="ul_parag"><a href="finansal_raporlar_2017.php" class="paraglink">2017 Y�l�</a></li>
+<li class="ul_parag"><a href="finansal_raporlar_2016.php" class="paraglink">2016 Y�l�</a></li>
+<li class="ul_parag"><a href="finansal_raporlar_2015.php" class="paraglink">2015 Y�l�</a></li>
+<li class="ul_parag"><a href="finansal_raporlar_2014.php" class="paraglink">2014 Y�l�</a></li>
+<li class="ul_parag"><a href="finansal_raporlar_2013.php" class="paraglink">2013 Y�l�</a></li>
+<li class="ul_parag"><a href="finansal_raporlar_2012.php" class="paraglink">2012 Y�l�</a></li>
+<li class="ul_parag"><a href="finansal_raporlar_2011.php" class="paraglink">2011 Y�l�</a></li>
+<li class="ul_parag"><a href="finansal_raporlar_2010.php" class="paraglink">2010 Y�l�</a></li>
+
+<li class="ul_parag"><a href="finansal_raporlar_2009.php" class="paraglink">2009 Y�l�</a></li>
+<li class="ul_parag"><a href="finansal_raporlar_2008.php" class="paraglink">2008 Y�l�</a></li>
+<li class="ul_parag"><a href="finansal_raporlar_2007.php" class="paraglink">2007 Y�l�</a></li>
+<li class="ul_parag"><a href="finansal_raporlar_2006.php" class="paraglink">2006 Y�l�</a></li>
+<li class="ul_parag"><a href="finansal_raporlar_2005.php" class="paraglink">2005 Y�l�</a></li>
+-->
+</ul>  
+</p>   
+      
+           
+        </td>        
+      </tr>
+    </table>
+  <!-- InstanceEndEditable -->
+
+  </div>
+
+  
+
+  <div id="div_footer_template">
+
+    <table width="980" height="30" border="0" cellpadding="0">
+
+      <tr>
+
+        <td height="30" align="center"><span id="footer" style="font-size:9px;font-family:Arial;color:#666;text-align:center">Copyright © 2011 Bank Mellat Türkiye İstanbul Merkez Şubesi</span></td>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+<!--
+
+swfobject.registerObject("FlashID2");
+
+//--> 
+
+</script>
+
+</body>
+
+<!-- InstanceEnd --></html>
+<?
+@mysql_close($connection_lcl);
+?>

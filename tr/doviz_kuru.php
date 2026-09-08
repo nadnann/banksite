@@ -1,0 +1,314 @@
+<?php require_once('../Connections/connection_lcl.php'); ?>
+<?php include_once '../includes/include_header_tr.php'; ?>
+  
+  <div id="div_icerik_template">
+
+        <table width="960" border="0" align="center" cellpadding="4" cellspacing="7" class="table_border" id="Table_" vspace="0">
+
+        <td width="230" height="90" align="left" valign="top"><img src="../image/image_ir/sattlement.jpg" width="230" height="325" class="resim" /></td>
+        <td width="730" colspan="-5" align="left" valign="top">
+
+
+          <header class="template_baslik">TCMB DOVİZ KURLARI</header><p></p>
+          <table width="680" align="center" class="template" >
+          <tr>
+          <tr>
+            <td colspan="9" align="center" valign="middle" bgcolor="#E5E5E5"><b>Güncel TCMB Döviz Kurları</b></td>
+          </tr>
+          <tr>
+            <td width="96" align="center" valign="middle" bgcolor="#E5E5E5">Döviz Kodu</td>
+            <td width="45" align="center" valign="middle" bgcolor="#E5E5E5">Birim</td>
+            <td width="139" align="center" valign="middle" bgcolor="#E5E5E5">Döviz Adı </td>
+            <td width="73" align="center" valign="middle" bgcolor="#E5E5E5">Döviz Alış</td>
+            <td width="99" align="center" valign="middle" bgcolor="#E5E5E5">Döviz Satış</td>
+            <td width="79" align="center" valign="middle" bgcolor="#E5E5E5">Efektif Alış </td>
+            <td width="99" align="center" valign="middle" bgcolor="#E5E5E5">Efektif Satış </td>
+          </tr>
+          <!--Yeni d�viz kuru  ------------------------------>
+          
+		 <?php
+		  
+        	function file_get_content($url) { 
+
+/*$icerik = simplexml_load_file('http://www.tcmb.gov.tr/kurlar/today.xml'); */
+
+/*$url="http://www.tcmb.gov.tr/kurlar/today.xml";*/
+
+$xml = @simplexml_load_file($url);
+
+
+
+return $xml;
+/*
+           $url = parse_url($url); 
+           if($url["path"]  == "") $url["path"]  = "/"; 
+           //if($url["query"] != "") $url["path"] .= "?".$url["query"]; 
+        
+           $fp  = fsockopen($url["host"], 80, $errno, $errstr, 30); 
+           if(!$fp) return false; 
+        
+           fputs($fp, "GET ".$url["path"]." HTTP/1.0\r\n"); 
+           fputs($fp, "Host: ".$url["host"]."\r\n"); 
+           fputs($fp, "\r\n"); 
+        
+           while (!feof($fp)) { 
+              @$icerik .= fgets($fp,4096); 
+              } 
+           fclose($fp); 
+        
+                 return $icerik; 
+                 */
+           } 
+         /* @$html=file_get_content("http://www.tcmb.gov.tr/kurlar/today.xml"); 
+          if(preg_match("#<Tarih_Date(.*?)</Tarih_Date>#sm",$html,$sonuc)) { 
+          $handle=fopen("doviz.xml","wb"); 
+          $xmly='<?xml version="1.0" encoding="UTF-8"?>'.$sonuc[0]; 
+          fwrite($handle,$xmly); 
+          fclose($handle); 
+          }
+		  
+        ?>
+        
+        <?php 
+		
+       
+        
+        @$dovizYol='doviz.xml'; 
+        
+        
+        $xml = new SimpleXMLElement($dovizYol,NULL,true); 
+        */
+        $xml = file_get_content("https://www.tcmb.gov.tr/kurlar/today.xml")
+
+        ?> 
+          
+          <!--Yeni döviz kuru ------------------------------->
+          
+          
+          <!-- foreign exchange              -->
+         
+          <!-- foreign exchange              -->
+           <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[0]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[0]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[0]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[0]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[0]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[0]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[0]->BanknoteSelling); ?></td>
+          </tr>
+		
+           <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[1]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[1]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[1]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[1]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[1]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[1]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[1]->BanknoteSelling); ?></td>
+          </tr>
+          
+          <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[2]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[2]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[2]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[2]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[2]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[2]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[2]->BanknoteSelling); ?></td>
+          </tr>
+          
+         
+            <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[3]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[3]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[3]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[3]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[3]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[3]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[3]->BanknoteSelling); ?></td>
+          </tr>
+          
+          <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[4]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[4]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[4]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[4]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[4]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[4]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[4]->BanknoteSelling); ?></td>
+          </tr>
+
+          <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[5]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[5]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[5]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[5]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[5]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[5]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[5]->BanknoteSelling); ?></td>
+          </tr>
+
+          <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[6]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[6]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[6]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[6]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[6]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[6]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[6]->BanknoteSelling); ?></td>
+          </tr>
+
+          <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[7]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[7]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[7]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[7]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[7]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[7]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[7]->BanknoteSelling); ?></td>
+          </tr>
+
+          <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[8]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[8]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[8]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[8]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[8]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[8]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[8]->BanknoteSelling); ?></td>
+          </tr>
+
+	    <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[9]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[9]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[9]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[9]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[9]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[9]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[9]->BanknoteSelling); ?></td>
+          </tr>
+
+	    <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[10]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[10]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[10]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[10]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[10]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[10]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[10]->BanknoteSelling); ?></td>
+          </tr>
+			
+            <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[11]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[11]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[11]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[11]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[11]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[11]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[11]->BanknoteSelling); ?></td>
+          </tr>
+            
+            <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[12]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[12]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[12]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[12]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[12]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[12]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[12]->BanknoteSelling); ?></td>
+          </tr>
+          
+            <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[13]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[13]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[13]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[13]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[13]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[13]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[13]->BanknoteSelling); ?></td>
+          </tr>
+			
+           <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[14]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[14]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[14]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[14]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[14]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[14]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[14]->BanknoteSelling); ?></td>
+          </tr>
+          
+           <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[15]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[15]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[15]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[15]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[15]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[15]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[15]->BanknoteSelling); ?></td>
+          </tr>
+          
+          <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[16]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[16]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[16]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[16]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[16]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[16]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[16]->BanknoteSelling); ?></td>
+          </tr>
+          
+           <tr>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[17]['Kod']); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[17]->Unit); ?></td>
+            <td align="left" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags(iconv("UTF-8", "UTF-8", $xml->Currency[17]->Isim)); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags( $xml->Currency[17]->ForexBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[17]->ForexSelling); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[17]->BanknoteBuying); ?></td>
+            <td align="center" valign="middle" bgcolor="#F5F5F5"><?php echo strip_tags($xml->Currency[17]->BanknoteSelling); ?></td>
+          </tr>
+
+          </table></td>
+        </tr>
+      
+    </table>
+ <!--
+   <a class=capraz2 href="ikuraktar.txt" style="color:#333;font-size:10px;font-family:Arial">Metin dosyas� olarak al�n</a> | 
+   <a class=capraz2 href="index.php" style="color:#333;font-size:10px;font-family:Arial">Anasayfa</a>
+
+-->    
+<br/> <br />
+         
+         
+        
+        
+         
+        </td>
+    
+        
+      </tr>
+    </table>
+    
+
+  </div>
+  
+  <div id="div_footer_template">
+    <table width="980" height="30" border="0" cellpadding="0">
+      <tr>
+        <td height="30" align="center"><span id="footer" style="font-size:9px;font-family:Arial;color:#666;text-align:center">Copyright � 2011 Bank Mellat Türkiye İstanbul Merkez Şubesi</span></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<script type="text/javascript">
+<!--
+swfobject.registerObject("FlashID2");
+//--> 
+</script>
+</body>
+</html>
+<?
+@mysql_close($connection_lcl);
+?>

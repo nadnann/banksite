@@ -1,0 +1,165 @@
+<?php require_once('../Connections/connection_lcl.php'); ?>
+<?php include_once '../includes/include_header_en.php'; ?>
+
+<div id="div_icerik_template">
+<b>Information of Credit Calculation </b><a href="../en/loan_calculation.php" class="paraglink" target="_blank"><span><b>please click.</b></span></a></b>
+        <table width="960" height="300" border="0" align="center" cellpadding="4" cellspacing="7" class="table_border" id="Table_" vspace="0">
+      <tr>
+        <td width="230" height="90" align="left" valign="top"><img src="../image/image_ir/foreignletterofguarantee.jpg" width="230" height="325" class="resim" /></td>
+        <td width="730" colspan="-5" align="left" valign="top">
+        <header class="template_baslik">INTEREST RATES</header><p></p><p></p>
+         
+           <table width="550" align="center" class="template" >
+         
+              <tr>
+                <td colspan="6" align="center" valign="middle" bgcolor="#E5E5E5"><b>Interest Rates for Deposit Account</b></td>
+                </tr>
+                              <tr>
+                <td width="150" align="center" valign="middle" bgcolor="#E5E5E5"></td>
+                <td width="110" align="center" valign="middle" bgcolor="#E5E5E5"> No Payment Term </td>
+                <td width="70" align="center" valign="middle" bgcolor="#E5E5E5">1 Month </td>
+                <td width="70" align="center" valign="middle" bgcolor="#E5E5E5">3 Months</td>
+                <td width="70" align="center" valign="middle" bgcolor="#E5E5E5">6 Months</td>
+                <td width="70" align="center" valign="middle" bgcolor="#E5E5E5">12 Months and Above</td>
+                </tr>
+              <tr>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"><strong>TL</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 0 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 4,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 4,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 4,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 4,00 </td>
+                </tr>
+              <tr>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"><strong>USD</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 0 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"><strong>EUR</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 0 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"><strong>GBP</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 0 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+              </tr>           
+          </table>
+			<!--  <p class="parag">(*) Applied for Corporate / Commecial Customers having 100.000 and more depositsas � 0,25 % p.a.</p>-->
+            <p class="parag">The interest rates stated in the table are the current annual simple interest rates  and Bank Mellat reserves the right to change the interest rates on transaction basis according to the amount or maturity.</p>
+            <!--  <p class="parag">(*) Monthly – 0,2 % negative interest rate is applied for the customers and banks which has monthy average of 100.000 EUR or more on their accounts</p>-->
+            <table width="675" align="center" class="template" >
+         
+              <tr>
+                <td colspan="9" align="center" valign="middle" bgcolor="#E5E5E5"><b>Interest Rates Applied To Credits </b></td>
+                </tr>
+                <tr>
+                <td width="184" align="center" valign="middle" bgcolor="#E5E5E5"></td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">TL</td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">USD</td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">EUR</td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">GBP</td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">JPY</td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">CHF</td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">AED</td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">CNY</td>
+                </tr>
+              <tr>
+                <td align="left" valign="middle" bgcolor="#F5F5F5"><strong>Discount and Repurchase Credits</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 28,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 10,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 10,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+                </tr>
+              <tr>
+                <td align="left" valign="middle" bgcolor="#F5F5F5"><strong>Generally</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 28,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 10,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 10,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+              </tr>
+              <tr>
+                <td align="left" valign="middle" bgcolor="#F5F5F5"><strong>Commercial Credits</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 28,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 10,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 10,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+              </tr>
+              <tr>
+                <td align="left" valign="middle" bgcolor="#F5F5F5"><strong>Consumer Credits</strong></td>
+       			<td align="center" valign="middle" bgcolor="#F5F5F5"> 28,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 10,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 10,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+              </tr> 
+                            <tr>
+                <td align="left" valign="middle" bgcolor="#F5F5F5"><strong>Other Credits(*)</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 28,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 10,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 10,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 11,00</td>
+                          </tr>           
+          </table>
+            <p class="parag">(*) With the exception of reimbursement credits, interest rate stipulated in the reimbursement credit agreement shall be applied.</p>
+          <p class="parag">Within the framework of aggrement for prevention of double taxation concluded between Iran and Turkey, in order to exempt some of your earnings gained in Turkey from taxation and since those of the entities who earn interest yields in Turkey are expected to submit a document indicating that they are full tax-payers over their global yields, you are kindly requested to provide such document from your tax office and send us immediately having translated into turkish and certified by turkish embassy authorities in your country pls note that this document will be valid until the end of the year and be aware that such document should be renewed and sent us for each successive year in same manner.</p>
+        
+        
+         
+        </td>
+    
+        
+      </tr>
+    </table>
+    
+
+  </div>
+  
+  <div id="div_footer_template">
+    <table width="980" height="30" border="0" cellpadding="0">
+      <tr>
+        <td height="30" align="center"><span id="footer" style="font-size:9px;font-family:Arial;color:#666;text-align:center">Copyright � 2011 Bank Mellat Turkey Istanbul Main Branch</span></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<script type="text/javascript">
+<!--
+swfobject.registerObject("FlashID2");
+//--> 
+</script>
+</body>
+</html>
+<?php
+@mysql_close($connection_lcl);
+?>

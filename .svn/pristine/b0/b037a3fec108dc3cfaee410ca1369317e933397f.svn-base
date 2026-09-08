@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="windows-1254"?>
+<Banka EFTKodu="0094" Adi="Bank Mellat" GuncellemeTarihi="2013-07-25T11:30:00">
+  <IslemGrubu IslemGrubuAdi="Para Aktarma">
+    <Islem IslemAdi="Havale">
+      <Kalem KalemAdi="Giden Havale İşlemleri">
+        <Masraf MasrafAdi="Şubelerarası TL(Türk Lirası)Havale(Amir ve/veya Lehdarı Bankamız Müşterisi Olmayanlar İçin)" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>10</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-03-29T11:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Şubelerarası YP(Yabancı Para)Havale(Amir ve/veya Lehdarı Bankamız Müşterisi Olmayanlar İçin)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>10</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-03-29T11:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Şubelerarası TL/YP Havale(Amir ve/veya Lehdarı Bankamız Müşterisi Olanlar İçin)" BirimTutar="" BirimOran="%">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>ÜCRETSİZDİR</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Yurtiçi Diğer Bankalara Yapılan TL(Türk Lirası)Havale ( 1 - 1000 TL Arası)" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>10</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-03-29T11:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Yurtiçi Diğer Bankalara Yapılan TL(Türk Lirası)Havale ( 1001 - 5000 TL Arası)" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>15</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-03-29T11:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Yurtiçi Diğer Bankalara Yapılan TL(Türk Lirası)Havale ( 5001 - 10000 TL Arası)" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>20</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-03-29T11:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Yurtiçi Diğer Bankalara Yapılan TL(Türk Lirası)Havale ( 10001 + TL ve Üzeri)" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0.2</AsgariOran>
+          <AzamiTutar>5000</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Yurt İçindeki Diğer Bankalara Yapılan YP(Yabancı Para) Havale ( 1 - 1000 Euro Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>10</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Yurt İçindeki Diğer Bankalara Yapılan YP(YAbancı Para) Havale ( 1001 - 5000 Euro Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>15</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Yurt İçindeki Diğer Bankalara Yapılan YP(Yabancı Para) Havale ( 5001 - 8000 Euro Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>20</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Yurt İçindeki Diğer Bankalara Yapılan YP(Yabancı Para) Havale ( 8001 - 1000000 Euro Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0.25</AsgariOran>
+          <AzamiTutar>1000</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-04-02T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Yurt İçindeki Diğer Bankalara Yapılan YP(Yabancı Para) Havale ( 1000001 - 5000000 Euro Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0.1</AsgariOran>
+          <AzamiTutar>2000</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-04-02T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Yurt İçindeki Diğer Bankalara Yapılan YP(Yabancı Para) Havale ( 5000001 + Euro ve Üzeri Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0.04</AsgariOran>
+          <AzamiTutar>5000</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-02-17T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="İran'a Yapılan YP(Yabancı Para) Havale (İran Riyal Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>5</AsgariTutar>
+          <AsgariOran>0.1</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2013-07-24T11:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Yurt Dışındaki Bankalara Yapılan YP(Yabancı Para) Havale ( 1 - 5000000 Euro Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>5</AsgariTutar>
+          <AsgariOran>0.4</AsgariOran>
+          <AzamiTutar>250</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-03-29T11:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Yurt Dışındaki Bankalara Yapılan YP(Yabancı Para) Havale ( 5.000.000 Euro ve üzeri Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>1000</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-03-29T11:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Bankalararası MT202 Swift Transferlerinde(Bank Mellat Genel Müdürlük ve Şubeleri Hariç)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>5</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2011-04-05T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="TL(Türk Parası) Havaleler için Haberleşme Masrafı" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>5</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="YP(Yabancı Para) Havaleler için Posta Masrafı" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>10</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+      <Kalem KalemAdi="Gelen Havale İşlemleri">
+        <Masraf MasrafAdi="Gelen TL(Türk Parası) Havalenin Çek Olarak Ödenmesi Durumunda" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>50</AsgariTutar>
+          <AsgariOran>0.25</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Gelen TL(Türk Parası) Havalenin Ödenmesi Durumunda ( 1 - 1000 TL Arası)" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>10</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-03-29T11:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Gelen TL(Türk Parası) Havalenin Ödenmesi Durumunda ( 1001 - 5000 TL Arası)" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>15</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-03-29T11:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Gelen TL(Türk Parası) Havalenin Ödenmesi Durumunda ( 5001 - 10000 TL Arası)" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>20</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-03-29T11:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Gelen TL(Türk Parası) Havalenin Ödenmesi Durumunda ( 10001 + TL ve Üzeri)" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0.2</AsgariOran>
+          <AzamiTutar>5000</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Gelen YP(Yabancı Para) Havalenin Efektif Ödenmesi Durumunda ( 1 - 200 Euro Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>5</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Gelen YP(Yabancı Para) Havalenin Efektif Ödenmesi Durumunda ( 201 - 1000 Euro Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>10</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Gelen YP(Yabancı Para) Havalenin Efektif Ödenmesi Durumunda ( 1001 - 5000 Euro Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>15</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Gelen YP(Yabancı Para) Havalenin Efektif Ödenmesi Durumunda ( 5001 - 8000 Euro Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>20</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Gelen YP(Yabancı Para) Havalenin Efektif Ödenmesi Durumunda ( 8001 - 1000000 Euro Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0.25</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-03-29T11:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Gelen YP(Yabancı Para) Havalenin Efektif Ödenmesi Durumunda ( 1000001 - 5000000 Euro Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0.1</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-03-29T11:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Gelen YP(Yabancı Para) Havalenin Efektif Ödenmesi Durumunda ( 5000001 + Euro ve Üzeri Karşılığı)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0.04</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2012-03-29T11:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Gelen YP(Yabancı Para) Havalenin TL(Türk Lirası) Olarak Ödenmesi Durumunda" BirimTutar="" BirimOran="%">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>ÜCRETSİZDİR</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+    <Islem IslemAdi="Swift">
+      <Kalem KalemAdi="Swift Gönderimi">
+        <Masraf MasrafAdi="Swift Ücreti" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>20</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+    <Islem IslemAdi="EFT">
+      <Kalem KalemAdi="EFT Gönderimi">
+        <Masraf MasrafAdi="EFT Ücreti" BirimTutar="" BirimOran="">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>EFT HİZMETİ VERİLMEMEKTEDİR</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+  </IslemGrubu>
+  <IslemGrubu IslemGrubuAdi="Bireysel Krediler">
+    <Islem IslemAdi="Konut Kredileri">
+      <Kalem KalemAdi="Konut Kredileri">
+        <Masraf MasrafAdi="Konut Kredileri" BirimTutar="" BirimOran="">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>KONUT KREDİSİ VERİLMEMEKTEDİR</Aciklama>
+          <GuncellemeTarihi>2011-04-05T12:45:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+    <Islem IslemAdi="Taşıt Kredileri">
+      <Kalem KalemAdi="Taşıt Kredileri">
+        <Masraf MasrafAdi="Taşıt Kredileri" BirimTutar="" BirimOran="">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>TAŞIT KREDİSİ VERİLMEMEKTEDİR</Aciklama>
+          <GuncellemeTarihi>2011-04-05T12:45:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+    <Islem IslemAdi="İhtiyaç Kredileri">
+      <Kalem KalemAdi="İhtiyaç Kredileri">
+        <Masraf MasrafAdi="İhtiyaç Kredileri" BirimTutar="" BirimOran="">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>İHTİYAÇ KREDİSİ VERİLMEMEKTEDİR</Aciklama>
+          <GuncellemeTarihi>2011-04-05T12:45:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+  </IslemGrubu>
+  <IslemGrubu IslemGrubuAdi="Kredi Kartları ve Banka Kartları">
+    <Islem IslemAdi="Kredi Kartları">
+      <Kalem KalemAdi="Kredi Kartları">
+        <Masraf MasrafAdi="Kredi Kartları" BirimTutar="" BirimOran="">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>KREDİ KARTI HİZMETİ VERİLMEMEKTEDİR</Aciklama>
+          <GuncellemeTarihi>2011-04-05T12:45:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+    <Islem IslemAdi="Banka Kartları">
+      <Kalem KalemAdi="Banka Kartları">
+        <Masraf MasrafAdi="Banka Kartları" BirimTutar="" BirimOran="">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BANKA KARTI HİZMETİ VERİLMEMEKTEDİR</Aciklama>
+          <GuncellemeTarihi>2011-04-05T12:45:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+  </IslemGrubu>
+  <IslemGrubu IslemGrubuAdi="Mevduat Hesapları">
+    <Islem IslemAdi="Mevduat Nakit Çekim Komisyonu">
+      <Kalem KalemAdi="Nakit Çekim Komisyonu">
+        <Masraf MasrafAdi="Mevduat Nakit Çekim Komisyonu (3.Şahıs için)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>5</AsgariTutar>
+          <AsgariOran>0.01</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2013-07-24T11:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+    <Islem IslemAdi="Mevduat Hesap Ücretleri">
+      <Kalem KalemAdi="Hesap Ekstre Ücreti">
+        <Masraf MasrafAdi="Hesap Ekstresi (Her sayfa için)" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>2</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+      <Kalem KalemAdi="Hesap İşletim Ücreti">
+        <Masraf MasrafAdi="TL(Türk Lirası) Hesaplar için (Aylık)" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>5</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="EUR(Avro) Hesaplar için (Aylık)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>2</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="USD(Amerikan Doları) Hesaplar için (Aylık)" BirimTutar="USD" BirimOran="%">
+          <AsgariTutar>3</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Diğer Döviz Cinsi Hesaplar için o günkü EUR Kur Karşılığı(Aylık)-(1000 USD üzeri karşılığı hesaplara uygulanmayacaktır)" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>2</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+  </IslemGrubu>
+  <IslemGrubu IslemGrubuAdi="ATM Kullanım">
+    <Islem IslemAdi="ATM">
+      <Kalem KalemAdi="ATM">
+        <Masraf MasrafAdi="ATM" BirimTutar="" BirimOran="">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>ATM HİZMETİ VERİLMEMEKTEDİR</Aciklama>
+          <GuncellemeTarihi>2011-04-05T12:45:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+  </IslemGrubu>
+  <IslemGrubu IslemGrubuAdi="Kiralık Kasa Ücretleri">
+    <Islem IslemAdi="Kiralık Kasa">
+      <Kalem KalemAdi="Kiralık Kasa">
+        <Masraf MasrafAdi="Kiralık Kasa" BirimTutar="" BirimOran="">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>KİRALIK KASA HİZMETİ VERİLMEMEKTEDİR</Aciklama>
+          <GuncellemeTarihi>2011-04-05T12:45:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+  </IslemGrubu>
+  <IslemGrubu IslemGrubuAdi="Menkul Kıymet İşlemleri">
+    <Islem IslemAdi="Kiralık Kasa">
+      <Kalem KalemAdi="Menkul Kıymet">
+        <Masraf MasrafAdi="Menkul Kıymet" BirimTutar="" BirimOran="">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>MENKUL KIYMET HİZMETİ VERİLMEMEKTEDİR</Aciklama>
+          <GuncellemeTarihi>2011-04-05T12:45:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+  </IslemGrubu>
+  <IslemGrubu IslemGrubuAdi="Çekler ve Senetler">
+    <Islem IslemAdi="Çek, Senet ve Poliçeler">
+      <Kalem KalemAdi="TL(Türk Lirası) Çek, Senet ve Poliçeler">
+        <Masraf MasrafAdi="TL(Türk Lirası) Çek, Senet ve Poliçe Tahsili" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>10</AsgariTutar>
+          <AsgariOran>0.2</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Çek Karnesi Ücreti (her sayfa için)" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>3</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2011-04-05T15:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+      <Kalem KalemAdi="YP (Yabancı Para) Çekler">
+        <Masraf MasrafAdi="İran'dan Tahsil Edilen YP(Yabancı Para) Çek Ödemesi" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0.3</AsgariOran>
+          <AzamiTutar>250</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2012-03-29T14:50:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Keşide Edilen YP(Yabancı Para) Çek Tahsili" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>0</AsgariTutar>
+          <AsgariOran>0.3</AsgariOran>
+          <AzamiTutar>250</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2012-03-29T14:50:00</GuncellemeTarihi>
+        </Masraf>
+        <Masraf MasrafAdi="Keşide Edilen YP(Yabancı Para) Çek Kargo Masrafı" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>40</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2011-11-18T15:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+  </IslemGrubu>
+  <IslemGrubu IslemGrubuAdi="Diğer">
+    <Islem IslemAdi="Referans Mektubu İşlemleri">
+      <Kalem KalemAdi="TL (Türk Lirası) Üzerinden Düzenlenen Referans Mektubu">
+        <Masraf MasrafAdi="Referans Mektubu Komisyonu " BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>75</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2011-04-05T15:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+      <Kalem KalemAdi="YP (Yabancı Para) Üzerinden Düzenlenen Referans Mektubu">
+        <Masraf MasrafAdi="Referans Mektubu Komisyonu" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>100</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2011-04-05T15:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+    <Islem IslemAdi="İmza Teyit Masrafı">
+      <Kalem KalemAdi="Müşteri İmza Teyit Masrafı (Her Sayfa için)">
+        <Masraf MasrafAdi="İmza Teyit Masrafı" BirimTutar="EUR" BirimOran="%">
+          <AsgariTutar>10</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Hariç</Aciklama>
+          <GuncellemeTarihi>2013-07-24T11:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+    <Islem IslemAdi="KKB Raporları Masrafı">
+      <Kalem KalemAdi="KKB Çek Raporu Ücreti">
+        <Masraf MasrafAdi="KKB Çek Raporu Ücreti" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>10</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2013-07-24T11:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+      <Kalem KalemAdi="KKB Risk Raporu Verme Masrafı">
+        <Masraf MasrafAdi="KKB Risk Raporu Verilmesi" BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>10</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2013-07-24T11:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+      <Kalem KalemAdi="Internet KKB Risk Raporu Masrafı">
+        <Masraf MasrafAdi="Internet KKB Risk Raporu " BirimTutar="TL" BirimOran="%">
+          <AsgariTutar>5</AsgariTutar>
+          <AsgariOran>0</AsgariOran>
+          <AzamiTutar>0</AzamiTutar>
+          <AzamiOran>0</AzamiOran>
+          <Aciklama>BSMV Dahil</Aciklama>
+          <GuncellemeTarihi>2013-07-24T11:00:00</GuncellemeTarihi>
+        </Masraf>
+      </Kalem>
+    </Islem>
+  </IslemGrubu>
+</Banka>

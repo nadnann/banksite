@@ -1,0 +1,8 @@
+mevduatlar.php
+misyon.php
+yatirimlar.php
+bireysel_musteri.php
+kurumsal_musteri.php
+doviz_kuru.php
+faiz_oranlari.php
+______________________

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rc_duyurular_idg" value="name:duyuru_id;datatype:int,name:duyuru_adi;datatype:string,name:duyuru_metni;datatype:blob,name:duyuru_link;datatype:string,name:duyuru_tarihi;datatype:date,name:duyuru_ekleyen_kullanici;datatype:string" />
+</info>

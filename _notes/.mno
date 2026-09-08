@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="PageAccessControlMethod" value="dontUseAccessList" />
+	<infoitem key="PageAccessControl" value="admin,user1" />
+	<infoitem key="MM_Session_Count" value="4" />
+	<infoitem key="MM_Session1" value="MM_Username1" />
+	<infoitem key="MM_Session2" value="MM_Username" />
+	<infoitem key="MM_Session3" value="MM_girissaati" />
+	<infoitem key="MM_Session4" value="MM_dosyaismi" />
+	<infoitem key="MM_Server_Count" value="0" />
+</info>

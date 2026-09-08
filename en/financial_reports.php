@@ -1,0 +1,81 @@
+<?php require_once('../Connections/connection_lcl.php'); ?>
+<?php include_once '../includes/include_header_en.php'; ?>
+  
+
+<div id="div_icerik_template"><!-- InstanceBeginEditable name="duzenlenilirAlan" -->
+
+   
+    <table width="960" height="300" border="0" align="center" cellpadding="4" cellspacing="7" class="table_border" id="Table_" vspace="0">
+      <tr>
+        <td width="230" height="90" align="left" valign="top"><img src="../image/image_ir/foreignletterofguarantee.jpg" width="230" height="325" class="resim" /></td>
+        <td width="730" colspan="-5" align="left" valign="top"><header class="template_baslik"><b>BANK MELLAT TURKEY ISTANBUL MAIN BRANCH - FINANCIAL REPORTS</b></header><p></p>
+        <p class="parag">
+ <ul>
+<li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2025" class="paraglink">2025 Years</a></li>
+ <li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2024" class="paraglink">2024 Years</a></li>
+<li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2023" class="paraglink">2023 Years</a></li>
+ <li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2022" class="paraglink">2022 Years</a></li>
+<li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2021" class="paraglink">2021 Years</a></li>
+<li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2020" class="paraglink">2020 Years</a></li>
+<li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2019" class="paraglink">2019 Years</a></li>
+<li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2018" class="paraglink">2018 Years</a></li>
+<li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2017"  class="paraglink">2017 Years</a></li>
+<li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2016"  class="paraglink">2016 Years</a></li>
+<li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2015"  class="paraglink">2015 Years</a></li>
+<li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2014"  class="paraglink">2014 Years</a></li>
+<li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2013"  class="paraglink">2013 Years</a></li>
+<li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2012"  class="paraglink">2012 Years</a></li>
+<li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2011"  class="paraglink">2011 Years</a></li>
+<!-- <li class="ul_parag"><a href="financial_reports_year.php?reportPeriod=2010"  class="paraglink">2010 Years</a></li> -->
+<!-- <li class="ul_parag"><a href="financial_reports_2009.php" target="_blank" class="paraglink">2009 Years</a></li> -->
+<!-- <li class="ul_parag"><a href="financial_reports_2008.php" target="_blank" class="paraglink">2008 Years</a></li> -->
+<!-- <li class="ul_parag"><a href="financial_reports_2007.php" target="_blank" class="paraglink">2007 Years</a></li> -->
+<!-- <li class="ul_parag"><a href="financial_reports_2006.php" target="_blank" class="paraglink">2006 Years</a></li> -->
+<!-- <li class="ul_parag"><a href="financial_reports_2005.php" target="_blank" class="paraglink">2005 Years</a></li> -->
+</ul>
+
+
+</p>   
+      
+           
+        </td>        
+      </tr>
+    </table>
+  <!-- InstanceEndEditable --></div>
+
+  
+
+  <div id="div_footer_template">
+
+    <table width="980" height="30" border="0" cellpadding="0">
+
+      <tr>
+
+        <td height="30" align="center"><span id="footer" style="font-size:9px;font-family:Arial;color:#666;text-align:center">Copyright � 2011 Bank Mellat Turkey Istanbul Main Branch</span></td>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+<!--
+
+swfobject.registerObject("FlashID2");
+
+//--> 
+
+</script>
+
+</body>
+
+<!-- InstanceEnd --></html>
+<?php
+@mysql_close($connection_lcl);
+?>

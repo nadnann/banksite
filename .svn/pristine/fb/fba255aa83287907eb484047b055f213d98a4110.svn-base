@@ -1,0 +1,184 @@
+<?php require_once('../Connections/connection_lcl.php'); ?>
+<? session_start();?>
+<?php
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+$editFormAction = $_SERVER['PHP_SELF'];
+if (isset($_SERVER['QUERY_STRING'])) {
+  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+}
+
+if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
+  $updateSQL = sprintf("UPDATE finansal_raporlar_en SET yil=%s, aciklama=%s, link=%s, ekleyen_kullanici=%s, eklenme_tarihi=%s WHERE id=%s",
+                       GetSQLValueString($_POST['finansal_yil'], "int"),
+                       GetSQLValueString($_POST['finansal_rapor_baslik'], "text"),
+                       GetSQLValueString($_POST['finansal_link'], "text"),
+                       GetSQLValueString($_POST['ekleyene_kullanici'], "text"),
+                       GetSQLValueString($_POST['ekleme_tarihi'], "date"),
+                       GetSQLValueString($_POST['finansal_id'], "int"));
+
+  mysql_select_db($database_connection_lcl, $connection_lcl);
+  $Result1 = mysql_query($updateSQL, $connection_lcl) or die(mysql_error());
+
+  $updateGoTo = "e77ba53855finansal_duzenle_en3.php";
+  if (isset($_SERVER['QUERY_STRING'])) {
+    $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
+    $updateGoTo .= $_SERVER['QUERY_STRING'];
+  }
+  header(sprintf("Location: %s", $updateGoTo));
+}
+
+$colname_rc_finansal_duzenle = "-1";
+if (isset($_GET['id'])) {
+  $colname_rc_finansal_duzenle = $_GET['id'];
+}
+mysql_select_db($database_connection_lcl, $connection_lcl);
+$query_rc_finansal_duzenle = sprintf("SELECT * FROM finansal_raporlar_en WHERE id = %s", GetSQLValueString($colname_rc_finansal_duzenle, "int"));
+$rc_finansal_duzenle = mysql_query($query_rc_finansal_duzenle, $connection_lcl) or die(mysql_error());
+$row_rc_finansal_duzenle = mysql_fetch_assoc($rc_finansal_duzenle);
+$totalRows_rc_finansal_duzenle = mysql_num_rows($rc_finansal_duzenle);
+
+$colname_rc_finansal_duzenle = "-1";
+if (isset($_GET['id'])) {
+  $colname_rc_finansal_duzenle = $_GET['id'];
+}
+mysql_select_db($database_connection_lcl, $connection_lcl);
+$query_rc_finansal_duzenle = sprintf("SELECT * FROM finansal_raporlar WHERE id = %s", GetSQLValueString($colname_rc_finansal_duzenle, "int"));
+$rc_finansal_duzenle = mysql_query($query_rc_finansal_duzenle, $connection_lcl) or die(mysql_error());
+$row_rc_finansal_duzenle = mysql_fetch_assoc($rc_finansal_duzenle);
+?>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
+<title>Kullanýcý Sayfasý</title>
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../css_menu/default.css">
+
+</head>
+
+<body>
+<table width="965" border="1" bordercolor="#000" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td colspan="3"><table width="965" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#000000">
+      <tr>
+        <td align="center" valign="middle"><table width="969" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="../image/top_Content/top_Content_.png" alt="" width="969" height="102" /></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle"><table width="970" height="126" border="0" align="center" cellpadding="4" cellspacing="7" class="table_border" id="Table_" vspace="0">
+          <tr>
+            <td width="970" height="112" colspan="-5" align="left" valign="top"><header class="template_baslik">Y&Ouml;NETÝM PANELÝ</header>
+            <p class="parag">Hoþgeldiniz</p>
+            <p class="parag"> Kullanýcý Adý: <b><?php echo ucwords($_SESSION['MM_Username1']); ?></b> </p>
+             <p class="parag"> Giriþ Saati: <b><?php echo $_SESSION['MM_girissaati']; ?></b></p>
+          <p class="parag">&nbsp;<a href="d56b699830e77ba53855679cb1d252da01.php" class="paraglink"><img src="images/Home.png" width="24" height="24" border="0" />Anasayfa</a></p>
+          
+             <table width="700" border="0" cellpadding="0" cellspacing="0" class="template_baslik">
+               <tr>
+                 <td height="92" align="left" valign="top"><table width="700" border="0" cellspacing="0" cellpadding="0">
+                   <tr>
+                     <td><form id="form1" name="form1" method="POST" action="<?php echo $editFormAction; ?>">
+                       <table width="700" border="0" cellpadding="0" cellspacing="0" class="template">
+                         <tr>
+                           <th width="184">&nbsp;</th>
+                           <td width="516"><label>
+                             <input name="finansal_id" type="text" id="finansal_id" value="<?php echo $row_rc_finansal_duzenle['id']; ?>" readonly="readonly" />
+                           </label></td>
+                         </tr>
+                         <tr>
+                           <th class="template">&nbsp;Yýl</th>
+                           <td><label>
+                             <input name="finansal_yil" type="text" id="finansal_yil" value="<?php echo $row_rc_finansal_duzenle['yil']; ?>" />
+                           </label></td>
+                         </tr>
+                         <tr>
+                           <th class="template">&nbsp;Finansal Rapor Baþlýðý</th>
+                           <td><label>
+                             <input name="finansal_rapor_baslik" type="text" id="finansal_rapor_baslik" value="<?php echo $row_rc_finansal_duzenle['aciklama']; ?>" size="40" />
+                           </label></td>
+                         </tr>
+                         <tr>
+                           <th class="template">&nbsp;Finansal Rapor Linki</th>
+                           <td><label>
+                             <input name="finansal_link" type="text" id="finansal_link" value="<?php echo $row_rc_finansal_duzenle['link']; ?>" size="40" />
+                           </label></td>
+                         </tr>
+                         <tr>
+                           <th>Ekleyen Kullanýcý</th>
+                           <td><label>
+                             <input name="ekleyene_kullanici" type="text" id="ekleyene_kullanici" value="<?php echo $row_rc_finansal_duzenle['ekleyen_kullanici']; ?>" readonly="readonly" />
+                           </label></td>
+                         </tr>
+                         <tr>
+                           <th>Ekleme Tarihi</th>
+                           <td><label>
+                             <input name="ekleme_tarihi" type="text" id="ekleme_tarihi" value="<?php echo $row_rc_finansal_duzenle['eklenme_tarihi']; ?>" readonly="readonly" />
+                           </label></td>
+                         </tr>
+                         <tr>
+                           <td>&nbsp;</td>
+                           <td><input type="submit" name="button" id="button" value="  Finansal Raporu D&uuml;zenle  " /></td>
+                         </tr>
+                       </table>
+                       <input type="hidden" name="MM_update" value="form1" />
+                     </form></td>
+                   </tr>
+                 </table></td>
+               </tr>
+             </table>
+             <p class="parag">&nbsp;</p></td>
+          </tr>
+        </table>
+          <br /></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle" bgcolor="#333333"><span id="footer" style="font-size:9px;font-family:Arial;color:#666;text-align:center; line-height:20px" >Copyright &copy; 2011 Bank Mellat Turkey Istanbul Main Branch</span></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>
+<?php
+mysql_free_result($rc_finansal_duzenle);
+?>
+<?php
+@mysql_close($connection_lcl);
+?>

@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+   /*.tablo ,.aciklama,#formHesap {
+	  display:none;
+   }*/
+
+#submitId:hover{
+
+     color:white;
+     background-color: #e67e22; /*Carrot*/
+
+}
+input,select{
+	border-bottom-style:solid;
+	
+	color:black;
+}
+input:focus {
+	background-color:#e67e22;
+
+}
+.tek {
+	
+	background-color:#E5E5E5;
+}
+
+.cift{
+	
+	background-color:white;
+}
+.basliksatir td {
+	
+	background-color:white;
+}
+.basliksatirilk td {
+	
+	background-color:#E5E5E5;
+}
+

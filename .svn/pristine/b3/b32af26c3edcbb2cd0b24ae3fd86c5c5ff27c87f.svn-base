@@ -1,0 +1,169 @@
+<?php require_once('../Connections/connection_lcl.php'); ?>
+<?php include_once '../includes/include_header_tr.php'; ?>
+
+  <div id="div_icerik_template">
+
+<p><b>Örnek Kredi Hesaplama için ,</b><a href="../includes/krediHesaplama_tr.php" class="paraglink" target="_blank"><b class="paraglink" class="parag">lütfen tıklayınız</b></a></p> 
+        <table width="960" height="300" border="0" align="center" cellpadding="4" cellspacing="7" class="table_border" id="Table_" vspace="0">
+      <tr>
+        <td width="230" height="90" align="left" valign="top"><img src="../image/image_ir/foreignletterofguarantee.jpg" width="230" height="325" class="resim" /></td>
+        <td width="730" colspan="-5" align="left" valign="top">
+        <header class="template_baslik">FAİZ ORANLARI</header><p></p><p></p>
+         
+           <table width="550" align="center" class="template" >
+         
+              <tr>
+                <td colspan="6" align="center" valign="middle" bgcolor="#E5E5E5"><b>Mevduat Hesapları Faiz Oranları</b></td>
+                </tr>
+                              <tr>
+                <td width="150" align="center" valign="middle" bgcolor="#E5E5E5"></td>
+                <td width="110" align="center" valign="middle" bgcolor="#E5E5E5"> Vadesiz </td>
+                <td width="70" align="center" valign="middle" bgcolor="#E5E5E5">1 Ay </td>
+                <td width="70" align="center" valign="middle" bgcolor="#E5E5E5">3 Ay</td>
+                <td width="70" align="center" valign="middle" bgcolor="#E5E5E5">6 Ay</td>
+                <td width="70" align="center" valign="middle" bgcolor="#E5E5E5">12 Ay ve Üzeri</td>
+                </tr>
+              <tr>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"><strong>TL</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 0 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 4,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 4,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 4,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 4,00 </td>
+                </tr>
+              <tr>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"><strong>USD</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 0 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 0,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"><strong>EUR</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 0 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"><strong>GBP</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 0 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5">0,00</td>
+              </tr>             
+          </table>
+			<!--  <p class="parag">(*) 100.000 EUR ve üzeri Mevduata Sahip Kurumsal / Ticari Müşteriler için yıllık – 0,25 % olarak uygulanır.</p>-->
+            <p class="parag">(**) Tabloda belirtilen faiz oranları geçerli yıllık basit faiz oranlarını göstermekte olup, Bank Mellat tutara veya vadeye göre işlem bazında faiz oranları değiştirme hakkını saklı tutar.</p>
+            <p class="parag">(*) Aylık ortalama bakiyesi 100.000 EUR ve üzerinde olan bankalar ve ticari müşteriler için aylık binde 5 oranında negatif faiz (negative interest) tahsil edilecektir.</p>
+            <table width="670" align="center" class="template" >
+         
+              <tr>
+                <td colspan="9" align="center" valign="middle" bgcolor="#E5E5E5"><b>Kredilere Uygulanan Azami Faiz Oranları</b></td>
+                </tr>
+                              <tr>
+                <td width="150" align="center" valign="middle" bgcolor="#E5E5E5"></td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">TL</td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">USD</td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">EUR</td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">GBP</td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">JPY</td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">CHF</td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">AED</td>
+                <td width="55" align="center" valign="middle" bgcolor="#E5E5E5">CNY</td>
+                </tr>
+              <tr>
+                <td align="left" valign="middle" bgcolor="#F5F5F5"><strong>İskonto ve İştira Senetleri</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 20,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 13,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 17,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 18,00 </td>
+                </tr>
+              <tr>
+                <td align="left" valign="middle" bgcolor="#F5F5F5"><strong>Genel Olarak</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 20,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 13,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 17,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 18,00 </td>
+              </tr>
+              <tr>
+                <td align="left" valign="middle" bgcolor="#F5F5F5"><strong>Ticari Krediler</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 20,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 13,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 17,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 18,00 </td>
+              </tr>
+              <tr>
+                <td align="left" valign="middle" bgcolor="#F5F5F5"><strong>Tüketici Kredileri</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 20,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 13,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 17,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 18,00 </td>
+              </tr> 
+              
+              <tr>
+                <td align="left" valign="middle" bgcolor="#F5F5F5"><strong>Diğer Kredileri(*)</strong></td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 20,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 13,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 15,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 17,00 </td>
+                <td align="center" valign="middle" bgcolor="#F5F5F5"> 18,00 </td>
+              </tr>
+                        
+          </table>
+           
+            <p class="parag">(*) Rambursman Kredisi Hariç, Rambursman Kredisi Sözleşmesinde yazılı faiz oranı uygulanacaktır.</p>
+          <p class="parag">İran ve Türkiye arasındaki çift vergi tahsilinin önlenmesine yönelik düzenlenen antlaşma çercevesinde Türkiye'de, vergilendirmeden elde edilen gelirlerin bir kısmını muaf tutmak amacıyla faiz getirilerinden kazanç sağlayan kuruluşlar,global kazançlarının tüm vergilerini ödediklerini gösteren bir döküman ibraz etmek durumundadırlar.Söz konusu döküman vergi dairenizden / ofisinizden edinmenizi ,Türkçe'ye tercüme edilmiş ve ülkenizdeki Türkiye Cumhuriyeti Büyükelçiliği yetkililerince onaylanmış suretini tarafımıza göndermenizi önemle rica ederiz.Bu belgenin içinde bulunulan yıl sonuna kadar geçerli olacağını ve her yıl için aynı şekilde yenilenerek tarafımıza gönderilmesi gerektiğini lütfen unutmayınız.</p>
+        
+        
+         
+        </td>
+    
+        
+      </tr>
+    </table>
+        
+
+  </div>
+  
+  <div id="div_footer_template">
+    <table width="980" height="30" border="0" cellpadding="0">
+      <tr>
+        <td height="30" align="center"><span id="footer" style="font-size:9px;font-family:Arial;color:#666;text-align:center">Copyright � 2011 Bank Mellat Türkiye İstanbul Merkez Şubesi</span></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<script type="text/javascript">
+<!--
+swfobject.registerObject("FlashID2");
+//--> 
+</script>
+</body>
+</html>
+<?
+@mysql_close($connection_lcl);
+?>

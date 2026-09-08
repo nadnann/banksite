@@ -1,0 +1,51 @@
+.table_border {
+	border: 1px solid #999;
+	margin-top: 2px;
+}
+.table_headerB {
+	font-family: Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFF;
+	background-image: url(../../en/image/back-over.gif);
+	display: block;
+	text-align: center;
+	padding-top: 3px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	height: 12px;
+}
+
+.table_header {
+	font-family: Arial;
+	font-size: 10px;
+	color: #000;
+	text-decoration: none;
+	text-align: center;
+	background-color: #dedede;
+	font-weight: bold;
+}
+.table_icerikbir {
+	font-family: Arial;
+	font-size: 9px;
+	color: #333;
+	background-color: #e8e8e8;
+	text-align: center;
+}
+.table_icerikiki {
+	font-family: Arial;
+	font-size: 9px;
+	color: #333;
+	background-color: #B2B2B2;
+	text-align: center;
+}
+.table_icerikuc {
+	font-family: Arial;
+	font-size: 9px;
+	color: #333;
+	background-color: #DFDFDF;
+	text-align: center;
+}

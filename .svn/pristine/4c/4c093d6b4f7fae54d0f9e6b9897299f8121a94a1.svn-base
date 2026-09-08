@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rc_tumkullanicilar" value="name:uye_id;datatype:int,name:uye_adi;datatype:string,name:uye_soyadi;datatype:string,name:uye_user_adi;datatype:string,name:uye_user_sifre;datatype:string,name:uye_user_adi_m;datatype:string,name:uye_user_sifre_m;datatype:string,name:uye_grup;datatype:string,name:uye_kayit_tarihi;datatype:timestamp" />
+</info>

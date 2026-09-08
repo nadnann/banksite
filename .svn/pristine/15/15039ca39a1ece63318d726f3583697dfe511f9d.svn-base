@@ -1,0 +1,476 @@
+<?php require_once('../Connections/connection_lcl.php'); ?>
+
+<?php
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+        break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+        break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+        break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+        break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+        break;
+  }
+  return $theValue;
+}
+}
+
+$colname_rc_duyuru_idg = "-1";
+if (isset($_GET['id'])) {
+  $colname_rc_duyuru_idg = strip_tags($_GET['id']);
+}
+mysql_select_db($database_connection_lcl, $connection_lcl);
+$query_rc_duyuru_idg = sprintf("SELECT * FROM duyurular_en WHERE duyuru_id = %s", GetSQLValueString($colname_rc_duyuru_idg, "int"));
+$rc_duyuru_idg = mysql_query($query_rc_duyuru_idg, $connection_lcl) or die(mysql_error());
+$row_rc_duyuru_idg = mysql_fetch_assoc($rc_duyuru_idg);
+$totalRows_rc_duyuru_idg = mysql_num_rows($rc_duyuru_idg);
+?>
+
+<?php
+$_SESSION['adresler'].=$_SERVER['REQUEST_URI'];
+
+$id=strip_tags($_SERVER['REMOTE_ADDR']);
+if ($id) {
+$sayfalink=$_SERVER['REQUEST_URI'];
+$sayfa_adi="Bailed Claims 1";
+$veriyolu=mysql_pconnect("localhost", "mellatba_admin", "mwsite2011.");
+mysql_select_db("sayfa", $veriyolu);
+@mysql_query("insert into sayfa_en(session_id, sayfa_link, sayfa_adi) values('$id', '$sayfalink', '$sayfa_adi')");
+}
+
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
+<title>Bank Mellat Turkey</title>
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../css_menu/default.css">
+<link href="../human_resource/css/style_include.css" rel="stylesheet" type="text/css" />
+</head>
+<body leftmargin="auto" rightmargin="auto">
+<table width="965" border="1" bordercolor="#000" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td colspan="3"><table width="965" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#000000">
+      <tr>
+        <td align="center" valign="middle"><table width="969" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="../image/top_Content/top_Content_.png" alt="" width="969" height="102" /></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">
+        
+        <table width="960" height="300" border="0" align="center" cellpadding="4" cellspacing="7" id="Table_" vspace="0">
+      <tr>
+        <td height="90" align="left" valign="top">
+          <!-- <header class="template_baslik"><b>BÝREYSEL MÜÞTERÝ HÝZMETLERÝ ÜCRET TARÝFESÝ /  COMMISSION AND FEE TARIFF FOR CUSTOMER SERVICES </b></header> -->
+        <table width="100%" height="95%" border="0" align="center" cellpadding="5" cellspacing="0" class="template">
+  <tbody>
+    <tr>
+      <td width="999" valign="top" bgcolor="#FFFFFF">
+      <table width="100%" height="95%" border="0" align="center" cellpadding="5" cellspacing="0" class="template">
+  <tbody>
+    <tr>
+      <td width="999" valign="top" bgcolor="#FFFFFF">
+      <table width="100%" align="center">
+  <tr>
+    <td>
+      <table>
+        <colgroup>
+          <col width="82" />
+          <col width="86" />
+          <col width="105" />
+          <col width="162" />
+          <col width="131" />
+          <col width="79" />
+          <col width="136" />
+          <col width="380" />
+          <col width="118" />
+          <col width="92" />
+        </colgroup>
+<tr>
+          <td width="81" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Bank Adý /</b></p></td>
+          <td width="38" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Þube No /</b></p></td>
+          <td width="58" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Þube Adý /</b></p></td>
+          <td width="260" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Adý Soyadý - Ünvaný /</b></p></td>
+          <td width="114" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Doðum Tarihi /</b></p></td>
+          <td width="55" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Tipi (Mevduat-Diðer) /</b></p></td>
+          <td rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Hesap Türü (Basit-Ortak) /</b></p></td>
+          <td width="46" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Birimi /</b></p></td>
+          <td width="79" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Deðeri /</b></p></td>
+          <td width="71" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Son Ýþlem Tarihi /</b></p></td>
+          
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <td width="81" align="center" valign="middle" bgcolor="#E5E5E5"><p>Bank Name</p></td>
+          <td width="38" align="center" valign="middle" bgcolor="#E5E5E5"><p>Branch Code</p></td>
+          <td width="58" align="center" valign="middle" bgcolor="#E5E5E5"><p>Branch Name</p></td>
+          <td width="260" align="center" valign="middle" bgcolor="#E5E5E5"><p>Name / Surname - Title</p></td>
+          <td width="114" align="center" valign="middle" bgcolor="#E5E5E5"><p>Birth Year</p></td>
+          <td width="55" align="center" valign="middle" bgcolor="#E5E5E5"><p>Type (Deposit-Other)</p></td>
+          <td width="70" align="center" valign="middle" bgcolor="#E5E5E5"><p>Account ( Single-Joint)</p></td> 
+          <td width="46" align="center" valign="middle" bgcolor="#E5E5E5"><p>Currency</p></td>
+          <td width="79" align="center" valign="middle" bgcolor="#E5E5E5"><p>Amount</p></td>
+          <td width="71" align="center" valign="middle" bgcolor="#E5E5E5"><p>Last Trading Day</p></td>
+          
+        </tr>        
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right" width="43">1</td>
+          <td width="52">Ýstanbul</td>
+          <td width="392">ZANJAN    COPPER INDUSTRIES CO&nbsp;</td>
+          <td width="114">&nbsp;</td>
+          <td>M</td>
+          <td width="52">B</td>
+          <td width="63">USD</td>
+          <td>&nbsp;</td>
+          <td align="right" width="71">15.08.2007</td>
+          </tr>
+        <tr>
+          <td>Bank    Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>&Ouml;ZEMEK    PLASTÝK PROFÝL VE KALIP SAN.TÝC.LTD.ÞTÝ.&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>USD</td>
+          <td>&nbsp;</td>
+          <td align="right">28.05.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>VÝP TURÝZM    PÝRÝN&Ccedil;CÝOÐLU</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>USD</td>
+          <td>&nbsp;</td>
+          <td align="right">31.01.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>MOHAMMAD    JAVAD SAMAVATIAN&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>USD</td>
+          <td></td>
+          <td align="right">26.11.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>PARS NETSÝS    SAMANEH KISH&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>USD</td>
+          <td></td>
+          <td align="right">30.10.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>LOTFOLLAH    KAMALÝ&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>USD</td>
+          <td></td>
+          <td align="right">20.06.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>FURKAN KÝMYA    SAN VE TÝC.LTD.ÞTÝ.&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>USD</td>
+          <td></td>
+          <td align="right">06.02.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>ESMAIL    KARAMAD KERMANI</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>USD</td>
+          <td></td>
+          <td align="right">23.05.2007</td>
+          </tr>
+          <tr>
+          <td>Bank    Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>SHERKATE    SAKHTEMAN-I PAD CEYLAN&nbsp;</td>
+          <td width="114">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>USD</td>
+          <td>&nbsp;</td>
+          <td align="right">04.05.2007</td>
+          </tr>
+        <tr>
+          <td>Bank    Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>JAFAR    RAMEZANI-HASSAN JAMSHIDI SHAHMIRI&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>O</td>
+          <td>USD</td>
+          <td>&nbsp;</td>
+          <td align="right">18.10.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">2</td>
+          <td>Ankara</td>
+          <td>ALÝ MAMÝZADEH</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>USD</td>
+          <td>&nbsp;</td>
+          <td align="right">20.04.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">2</td>
+          <td>Ankara</td>
+          <td>PARVÝN JAVADÝ    DEHKHARGHAM</td>
+          <td>&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>USD</td>
+          <td></td>
+          <td align="right">26.07.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">2</td>
+          <td>Ankara</td>
+          <td>LEILI    NABDEL&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>USD</td>
+          <td></td>
+          <td align="right">22.10.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>ESMAÝL    KARAMAD KERMANÝ&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>TRY</td>
+          <td></td>
+          <td align="right">22.06.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>FAHRETTÝN    BERK&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>TRY</td>
+          <td></td>
+          <td align="right">26.12.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">2</td>
+          <td>Ankara&nbsp;</td>
+          <td>ZOHREH FANID    ALÝ POURÝ&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>TRY</td>
+          <td></td>
+          <td align="right">17.07.2007</td>
+          </tr>
+          <tr>
+          <td>Bank    Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>VANASAN VANA    FÝTTÝNGS VE D&Ouml;VME SAN TÝC.A.Þ.</td>
+          <td width="114">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>EUR</td>
+          <td>&nbsp;</td>
+          <td align="right">30.11.2007</td>
+          </tr>
+        <tr>
+          <td>Bank    Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>HOSSEÝN    MOTTAGHÝ MOHAMMAD MAHDÝ SABBAGHÝ REZA&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>O</td>
+          <td>EUR</td>
+          <td>&nbsp;</td>
+          <td align="right">18.07.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>EÝLKHÝCHÝ    MOHAMMAD GHASEM CHAPARÝ</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>EUR</td>
+          <td>&nbsp;</td>
+          <td align="right">15.05.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>SHERKATE    AKHTEMAN-I PAD CEYLAN</td>
+          <td>&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>EUR</td>
+          <td></td>
+          <td align="right">04.05.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>MOHAMMAD    BAGHER NAGHI ZADEH MOSTAFA SAFARI</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>O</td>
+          <td>EUR</td>
+          <td></td>
+          <td align="right">31.10.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>ALÝ AKBAR    SOHEYLÝ-NASER SEYEDÝ&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>O</td>
+          <td>EUR</td>
+          <td></td>
+          <td align="right">26.12.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">1</td>
+          <td>Ýstanbul</td>
+          <td>ALÝ AFRASIABÝ    AKHTEH KHANEH&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>EUR</td>
+          <td></td>
+          <td align="right">22.06.2007</td>
+          </tr>
+        <tr>
+          <td>Bank Mellat</td>
+          <td align="right">2</td>
+          <td>Ankara</td>
+          <td>ABOULFATH    FEKRÝ&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>EUR</td>
+          <td></td>
+          <td align="right">12.02.2007</td>
+          </tr>
+          <tr>
+          <td>Bank Mellat</td>
+          <td align="right">2</td>
+          <td>Ankara</td>
+          <td>GHODRATOLLAH    FAZELÝ RAD&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td>M</td>
+          <td>B</td>
+          <td>EUR</td>
+          <td></td>
+          <td align="right">12.02.2007</td>
+          </tr>
+        </table>
+
+</td>
+  </tr>      </table>
+
+</td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table></td>
+    </tr>
+  </tbody>
+</table></td>
+    </tr>
+  </tbody>
+</table> <a href="index.php" class="paraglinkF">Home</a>
+
+</td>
+        </tr>
+    </table><p></p>        
+        </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle" bgcolor="#333333">
+        <span id="footer" style="font-size:9px;font-family:Arial;color:#666;text-align:center; line-height:20px" >Copyright © 2011 Bank Mellat Turkey Istanbul Main Branch</span>
+        </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>
+<?
+@mysql_close($connection_lcl);
+?>

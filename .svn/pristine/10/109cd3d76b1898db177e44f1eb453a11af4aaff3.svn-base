@@ -1,0 +1,225 @@
+<?php require_once('../Connections/connection_lcl.php'); ?>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Bank Mellat Turkey</title>
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+
+<link href="../css/style_zamanAsimi.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="../css_menu/default.css">
+<link href="../human_resource/css/style_include.css" rel="stylesheet" type="text/css" />
+</head>
+<body leftmargin="auto" rightmargin="auto">
+<table width="965" border="1" bordercolor="#000" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td colspan="3"><table width="965" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#000000">
+      <tr>
+        <td align="center" valign="middle"><table width="969" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="../image/top_Content/top_Content_.png" alt="" width="969" height="102" /></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">
+        
+        <table width="960" height="300" border="0" align="center" cellpadding="4" cellspacing="7" id="Table_" vspace="0">
+      <tr>
+        <td height="90" align="left" valign="top">
+          <!-- <header class="template_baslik"><b>BİREYSEL M��TER� H�ZMETLER� �CRET TAR�FES� /  COMMISSION AND FEE TARIFF FOR CUSTOMER SERVICES </b></header> -->
+        <table width="100%" height="95%" border="0" align="center" cellpadding="5" cellspacing="0" class="template">
+  <tbody>
+    <tr>
+      <td width="999" valign="top" bgcolor="#FFFFFF">
+      <table width="100%" height="95%" border="0" align="center" cellpadding="5" cellspacing="0" class="template">
+  <tbody>
+    <tr>
+      <td width="999" valign="top" bgcolor="#FFFFFF">
+      <table width="100%" align="center">
+  <tr>
+    <td>
+      <table>
+        <colgroup>
+          <col width="82" />
+          <col width="86" />
+          <col width="105" />
+          <col width="162" />
+          <col width="131" />
+          <col width="79" />
+          <col width="136" />
+          <col width="380" />
+          <col width="118" />
+          <col width="92" />
+        </colgroup>
+<tr>
+          <td width="81" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Bank Adı /</b></p></td>
+          <td width="38" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Şube No /</b></p></td>
+          <td width="58" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Şube Adı /</b></p></td>
+          <td width="260" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Adı Soyadı - Ünvanı /</b></p></td>
+          <td width="114" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Doğum Tarihi /</b></p></td>
+          <td width="55" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Tipi (Mevduat-Diğer) /</b></p></td>
+          <td rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Hesap Türü (Basit-Ortak) /</b></p></td>
+          <td width="46" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Birimi /</b></p></td>
+          <td width="79" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Değeri /</b></p></td>
+          <td width="71" rowspan="2" align="center" valign="middle" bgcolor="#E5E5E5"><p><b>Son İşlem Tarihi /</b></p></td>
+          
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <td width="81" align="center" valign="middle" bgcolor="#E5E5E5"><p>Bank Name</p></td>
+          <td width="38" align="center" valign="middle" bgcolor="#E5E5E5"><p>Branch Code</p></td>
+          <td width="58" align="center" valign="middle" bgcolor="#E5E5E5"><p>Branch Name</p></td>
+          <td width="260" align="center" valign="middle" bgcolor="#E5E5E5"><p>Name / Surname - Title</p></td>
+          <td width="114" align="center" valign="middle" bgcolor="#E5E5E5"><p>Birth Year</p></td>
+          <td width="55" align="center" valign="middle" bgcolor="#E5E5E5"><p>Type (Deposit-Other)</p></td>
+          <td width="70" align="center" valign="middle" bgcolor="#E5E5E5"><p>Account ( Single-Joint)</p></td> 
+          <td width="46" align="center" valign="middle" bgcolor="#E5E5E5"><p>Currency</p></td>
+          <td width="79" align="center" valign="middle" bgcolor="#E5E5E5"><p>Amount</p></td>
+          <td width="71" align="center" valign="middle" bgcolor="#E5E5E5"><p>Last Trading Day</p></td>
+          
+        </tr>        
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>MONDIAL PRIVATE BANK LTD.  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>07/07/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>MONDIAL PRIVATE BANK LTD.  </td><td></td><td>B</td><td>M</td><td>USD</td><td></td><td>06/07/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>SÜKRÜ AKTAS </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>04/03/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>BANK MELLI IRAN PARIS  </td><td></td><td>B</td><td>M</td><td>CHF</td><td></td><td>19/08/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>KARARMAZ KALIP SANAYI VE TICARET LTD.STI.   </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>07/05/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>NOVIN DIS TICARET VE TURIZM LIMITED SIRKETI   </td><td></td><td>B</td><td>M</td><td>USD</td><td></td><td>09/10/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>SARAL DIS TICARET KOLL.STI ALI SARAL VE ORTAKLARI   </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>26/01/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>AMESCO FZE    </td><td></td><td>B</td><td>M</td><td>AED</td><td></td><td>05/11/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>YUNUS DIS TICARET LIMITED STI    </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>29/04/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>MAKRO MÜHENDISLIK AKSESUAR VE BAGLANTI ELEMANLARI IMALAT SAN.VE TIC.LTD.STI.  </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>05/11/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>BAHRAMALI EMAMI </td><td></td><td>B</td><td>M</td><td>USD</td><td></td><td>16/04/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>BAHRAMALI EMAMI </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>16/04/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>MERT INCI </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>17/09/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>SUAT NUROVA </td><td></td><td>B</td><td>M</td><td>USD</td><td></td><td>09/10/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>ABHARRIS COMPANY    </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>24/12/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>ABHARRIS COMPANY    </td><td></td><td>B</td><td>M</td><td>USD</td><td></td><td>24/12/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>METROPARS ULUSLARARASI NAKLIYAT VE DIS TICARET LIMITED SIRKETI   </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>08/03/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>IRAJ NAJAFI </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>18/11/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>GLOBAL BOLAND PAYE ENERJI VE INSAAT SAN.TIC.LTD.STI.   </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>28/12/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>TUREKS OTOMOTIV SANAYI VE TICARET LTD.STI.   </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>23/06/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>MOHAMMED SHAKER FAKHR </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>03/10/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>AWA INTERNATIONAL GMBH    </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>06/02/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>NECMI SEVINC </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>12/03/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>MG DIS TICARET LIMITED SIRKETI    </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>25/03/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>SAHMAK TEKSTIL MAKINA OTOMOTIV SANAYI TICARET LTD.STI.   </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>30/12/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>FARSHID BAGHERIAN </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>09/09/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>HAMID EBRAHIMI </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>27/12/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>TEXSAN TRADING GMBH (RAKFTZ BRANCH)   </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>30/06/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>TEXSAN TRADING GMBH (RAKFTZ BRANCH)   </td><td></td><td>B</td><td>M</td><td>AED</td><td></td><td>30/06/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>PETROTEC ENERJI TEKNOLOJILERI SANAYI VE TICARET LTD.STI.   </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>27/09/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>PETROTEC ENERJI TEKNOLOJILERI SANAYI VE TICARET LTD.STI.   </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>31/10/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>GHAYENI NAJAFI MOHAMMAD </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>16/07/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>AKTIF YAPISTIRICILAR VE KIMYA TIC.SAN.A.S.   </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>27/09/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>FLUORSPAR PRODUCTION AND MINING CO.LTD.   </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>06/10/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>TANTUS GAYRIMENKUL YATIRIM LTD.STI.   </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>15/05/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>FOULAD ASSAB CO.    </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>19/04/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>HRF DEMIR CELIK SAN.VE DIS. TIC.LTD.STI.   </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>03/07/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>ADANA PETRO KIMYA IC VE DIS TICARET LIMITED SIRKETI   </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>25/04/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>YESIL YOL DANISMANLIK YATIRIM SANAYI VE TICARET LTD.STI.   </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>24/05/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>ALA GROUP GENERAL TRADING INSAAT VE GIDA SANAYI DIS TICARET A.S.  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>06/01/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>DAVOUD ABDOLI </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>14/11/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>OMEGA MAKINA SANAYI VE TICARET LIMITED SIRKETI   </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>11/10/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>ALYAF ABRISHAM MAHAN DELIJAN  COMPANY  </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>13/03/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>GHADAR YAZDI </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>20/06/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>HESHMAT MOJARAD ABARGHOUEI </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>20/08/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>MAJID VASHEH </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>11/07/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>FUTURE DEMIR CELIK SANAYI VE DIS TICARET LIMITED SIRKETI   </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>26/02/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>METFINA METAL DIS TICARET LIMITED SIRKETI   </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>25/01/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>AC NAKLIYAT KARGO INSAAT GIDA TURIZM SAN.TIC.LTD.STI.   </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>23/01/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>AYACO ITHALAT IHRACAT TEKSTIL SANAYI VE TICARET LIMITED SIRKETI  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>03/05/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>INT TURIZM DANISMANLIK TICARET VE SANAYI LIMITED SIRKETI  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>30/05/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>SAZAND ROOY ZANJAN CINKO SAN.VE TIC A.S.  </td><td></td><td>B</td><td>M</td><td>USD</td><td></td><td>26/02/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>SAZAND ROOY ZANJAN CINKO SAN.VE TIC A.S.  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>16/02/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>ATA AIRLINES OZEL A.S.  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>05/03/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>VITA PHARMED DIS TIC.LTD.STI.  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>23/02/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>GREEN POWER ELEKTRIK IC VE DIS TICARET LIMITED SIRKETI  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>17/12/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>TAHSIL DIS TICARET LIMITED SIRKETI  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>05/03/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>AYLAR PETROL DIS TICARET LIMITED SIRKETI  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>07/03/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>FARSAM TRADING CO.LLC.  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>27/04/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>GOSTARESH DADE PARDAZI PARAYE COMPANY  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>09/03/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>GOSTARESH DADE PARDAZI PARAYE COMPANY  </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>09/03/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>ASAS HAVACILIK DIS TIC.TIBBI MALZ.DEMIR CELIK ÜRÜNLERI SAN.TIC.LTD.STI.  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>09/04/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>ARM KIMYASAL MAD.VE BILG.MAL.GIDA SAN.VE DIS TIC.LTD.STI.  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>19/03/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>PIONEER METAL DEMIR CELIK SAN.VE DIS TIC.LTD.STI.  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>16/12/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>NEVIS MEDIKAL MALZEMELER ELEKTRONIK DIS TICARET VE SANAYI LIMITED SIRKETI   </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>29/03/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>DAY INTERNATIONAL FZE  </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>11/09/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>APS GLOBAL COMMERCIAL MANAGEMENT LTD  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>16/04/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>LAVRELL HOLDINGS LTD  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>16/04/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>BENKO TEKNOLOJI SISTEMLERI DIS TICARET LIMITED SIRKETI  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>18/05/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>BOYLER ISITMA TEKNIKLERI DIZAYN VE MONTAJ SISTEMLERI TICARET LTD.STI.  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>22/02/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>OZGÜRLER TRAFIK ISARETLERI SANAYI VE TIC.LTD.STI.</td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>07/09/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>MÜMTAZ KUYUMCULUK IC VE DIS SAN.TIC.LTD.STI.  </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>31/05/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>MIHE GMBH DIS TICARET LIMITED SIRKETI  </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>01/06/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>BAKHAN DIS TIC.LTD.STI.  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>20/06/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>KIMIA GOSTARAN SEPEHR CHEMICAL INDUSTRIES CO.  </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>18/12/2012</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>KIMIA GOSTARAN SEPEHR CHEMICAL INDUSTRIES CO.  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>23/01/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>KIMIA GOSTARAN SEPEHR CHEMICAL INDUSTRIES CO.  </td><td></td><td>B</td><td>M</td><td>USD</td><td></td><td>11/09/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>SEYED SALEH SHOURGESHTI </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>23/08/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>RAHMAT AGHAJANI </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>24/06/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>WHITE HORIZON MAKINE SANAYI TICARET LTD.STI.  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>06/02/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>RASHID FEGHHI </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>14/02/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>POLYTEXT TRADING FZCO  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>04/03/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>POLYTEXT TRADING FZCO  </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>24/09/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>FENOMEN WORLDWIDE MACHINE SAN. VE TIC A.S.  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>15/03/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>BEHNAM REZAEI </td><td></td><td>B</td><td>M</td><td>USD</td><td></td><td>06/06/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>BEHNAM REZAEI </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>06/06/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>MAJID EFTEKHARI NASSER EFTEKHARI AFSAR  EFTEKHARI </td><td></td><td>B</td><td>M</td><td>USD</td><td></td><td>29/07/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>MAJID EFTEKHARI NASSER EFTEKHARI AFSAR  EFTEKHARI </td><td></td><td>B</td><td>M</td><td>USD</td><td></td><td>29/07/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>MAJID EFTEKHARI NASSER EFTEKHARI AFSAR  EFTEKHARI </td><td></td><td>B</td><td>M</td><td>USD</td><td></td><td>29/07/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>BAHMAN OLYAI SEPIDEH IRANLI OLYAI </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>09/12/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0001</td><td>Bank Mellat Istanbul</td><td>BAHMAN OLYAI SEPIDEH IRANLI OLYAI </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>09/12/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0002</td><td>Bank Mellat Ankara</td><td>MOHAMMAD HASHEMI </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>04/02/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0002</td><td>Bank Mellat Ankara</td><td>ECAD INTERNATIONAL TRADING FZE    </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>21/02/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0002</td><td>Bank Mellat Ankara</td><td>ECAD INTERNATIONAL TRADING FZE    </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>21/02/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0002</td><td>Bank Mellat Ankara</td><td>PEAK PV SOLAR TEKNOLOJILERI ANONIM SIRKETI</td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>01/04/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0002</td><td>Bank Mellat Ankara</td><td>NASER GHAFARI </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>08/07/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0002</td><td>Bank Mellat Ankara</td><td>ALTUNTAS HAVALANDIRMA TURIZM SANAYI TICARET ANONIM SIRKETI  </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>16/08/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0002</td><td>Bank Mellat Ankara</td><td>ALTUNTAS HAVALANDIRMA TURIZM SANAYI TICARET ANONIM SIRKETI  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>16/08/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0002</td><td>Bank Mellat Ankara</td><td>ABOLHASSAN KHALAJ MONFARED </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>13/09/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0002</td><td>Bank Mellat Ankara</td><td>VAN AMERONGEN KONTROLLÜ ATMOSFER SOGUTMA SISTEMLERI AR-GE DANISMANLIK KIMYA SANAYI VE TICARET LIMITED SIRKETI  </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>17/07/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0002</td><td>Bank Mellat Ankara</td><td>OZBASKENT MAKINA IMALAT SANAYI VE TICARET LIMITED SIRKETI   </td><td></td><td>B</td><td>M</td><td>TRY</td><td></td><td>07/12/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0003</td><td>Bank Mellat IzmIr</td><td>ARIKANDOS TURIZM DIS.TIC.DANS. TAR.ARC.GERECLERI SAN.TIC.LTD. STI. </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>20/12/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0003</td><td>Bank Mellat IzmIr</td><td>GOLDEN GRAPE IC VE DIS TIC. LTD. STI.</td><td></td><td>B</td><td>M</td><td>USD</td><td></td><td>03/09/2013</td></tr>
+<tr><td>Bank Mellat</td><td>0003</td><td>Bank Mellat IzmIr</td><td>HIPOKRAT TIBBI MALZ. IML. VE PAZ. A.S. </td><td></td><td>B</td><td>M</td><td>EUR</td><td></td><td>09/07/2013</td></tr>
+        
+				 </table>
+
+</td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table></td>
+    </tr>
+  </tbody>
+</table></td>
+    </tr>
+  </tbody>
+</table> <a href="index.php" class="paraglinkF">Home</a>
+
+</td>
+        </tr>
+    </table><p></p>        
+        </td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle" bgcolor="#333333">
+        <span id="footer" style="font-size:9px;font-family:Arial;color:#666;text-align:center; line-height:20px" >Copyright � 2011 Bank Mellat Turkey Istanbul Main Branch</span>
+        </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>
+<?php
+@mysql_close($connection_lcl);
+?>

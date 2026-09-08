@@ -1,0 +1,108 @@
+<?php require_once('../Connections/connection_lcl.php'); ?>
+<?php include_once '../includes/include_header_tr.php'; ?>
+<div id="div_icerik_template">
+
+<table width="752" height="300" border="0" align="center" cellpadding="4" cellspacing="7" class="table_border" id="Table_" vspace="0">
+      <tr>
+        <td width="730" height="90" colspan="-5" align="left" valign="top"><header class="template_baslik">BANK MELLAT TÜRKİYE İSTANBUL MERKEZ ŞUBESİ ORGANİZASYON TABLOSU<br /></header>
+          <b style="font-size:13px;"><br />
+         GENEL MÜDÜRLÜK ORGANİZASYONUMUZ</b><br />
+          <a style="font-size:13px;">İstanbul Merkez Şubesi aynı zamanda Genel Müdürlük olup 4 gruptan oluşmaktadır.</a><br />
+          
+          
+          <table width="800" border="1" style="font-size:13px;">
+            <tr>
+              <td><b>İthalat / İhracat / Krediler Grubu</b></td>
+              <td><b>Mali İşler / Personel Grubu</b></td>
+              <td><b>Bilgi Teknolojileri Grubu</b></td>
+              <td><b>İç Sistemler Grubu</b></td>
+            </tr>
+            <tr>
+              <td>İthalat</td>
+              <td>Fon Yönetimi</td>
+              <td>Sistem ve Ağ Yönetimi</td>
+              <td>İç Denetim</td>
+            </tr>
+            <tr>
+              <td>İhracat</td>
+              <td>Muhasebe</td>
+              <td>Uygulama Geliştirme ve Yazılım</td>
+              <td>İç Kontrol</td>
+            </tr>
+            <tr>
+              <td>Krediler</td>
+              <td>Raporlama</td>
+              <td>BT Güvenlik</td>
+              <td>Risk Yönetimi</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>Personel ve İdari İşler</td>
+              <td>&nbsp;</td>
+              <td>Masak Uyum</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>Mevzuat Organizasyon ve Sistem</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+          <p><b style="font-size:13px;">ŞUBE ORGANİZASYONUMUZ</b><br />
+            <a style="font-size:13px;">Türkiye’de İstanbul Merkez Şube ,  Ankara ve İzmir Şubeleri olarak Bankacılık Operasyon Hizmeti verilmektedir.</a><br />
+        </p></td>
+        
+      </tr>
+    </table>
+  
+  
+  <!--  <table width="960" height="300" border="0" align="center" cellpadding="4" cellspacing="7" class="table_border" id="Table_" vspace="0">
+      <tr>
+        <td width="230" height="90" align="left" valign="top">
+        <header class="template_baslik">ORGANİZASYON</header>
+        <p style="font-size:12px;">Resmi büyük görmek için <a href="../image/organizasyonsemaforweb2.jpg" target="_blank" style="color:#000000; font-size:12px;"><u>tıklayınz</u></a></p>
+        <img src="../image/organizasyonsemaforweb2.jpg" width="940" height="280" class="resim" /></td>
+        <br />
+        
+      </tr>
+    </table> -->
+    
+  <!-- InstanceEndEditable -->
+
+  </div>
+
+  
+
+  <div id="div_footer_template">
+
+    <table width="980" height="30" border="0" cellpadding="0">
+
+      <tr>
+
+        <td height="30" align="center"><span id="footer" style="font-size:9px;font-family:Arial;color:#666;text-align:center">Copyright © 2011 Bank Mellat Türkiye İstanbul Merkez Şubesi</span></td>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+<!--
+
+swfobject.registerObject("FlashID2");
+//--> 
+
+</script>
+
+</body>
+
+<!-- InstanceEnd --></html>
+<?
+@mysql_close($connection_lcl);
+?>

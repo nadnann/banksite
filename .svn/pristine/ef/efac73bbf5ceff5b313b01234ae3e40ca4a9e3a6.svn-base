@@ -1,0 +1,422 @@
+<?php require_once('../Connections/connection_lcl.php'); ?>
+
+<?php
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+$colname_rc_duyuru_idg = "-1";
+if (isset($_GET['id'])) {
+  $colname_rc_duyuru_idg = strip_tags($_GET['id']);
+}
+mysql_select_db($database_connection_lcl, $connection_lcl);
+$query_rc_duyuru_idg = sprintf("SELECT * FROM duyurular_en WHERE duyuru_id = %s", GetSQLValueString($colname_rc_duyuru_idg, "int"));
+$rc_duyuru_idg = mysql_query($query_rc_duyuru_idg, $connection_lcl) or die(mysql_error());
+$row_rc_duyuru_idg = mysql_fetch_assoc($rc_duyuru_idg);
+$totalRows_rc_duyuru_idg = mysql_num_rows($rc_duyuru_idg);
+?>
+   
+<? 
+$_SESSION['adresler'].=strip_tags($_SERVER['REQUEST_URI']);
+
+$id=strip_tags($_SERVER['REMOTE_ADDR']);
+if($id) {
+$sayfalink=strip_tags($_SERVER['REQUEST_URI']);
+$sayfa_adi="Investments";
+$veriyolu=mysql_pconnect("localhost","mellatba_admin","mwsite2011.");
+mysql_select_db("sayfa_en",$veriyolu);
+@mysql_query("insert into sayfa_en(session_id,sayfa_link,sayfa_adi) values('$id','$sayfalink','$sayfa_adi')");
+}
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
+
+<meta name="description" CONTENT="Individual and Corporate banking services">
+<meta name="keywords" content="mellat bank,mellat bank turkey,bank mellat,bank mellat turkey,,ýran,bank,ýran banking,banking,international banking">
+<meta name="Author" content="Bank Mellat">
+<meta name="Content-Language" content="english">
+<meta name="robots" content="index,follow">
+<meta name="revisit-after" content="30 days">
+<meta name="distribution" content="global"> 
+<meta name="rating" content="general">
+
+<title>Bank Mellat Turkey</title>
+
+<link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon">
+
+<link href="../css/style_en_yatirimlar.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../css_menu/default.css">
+<!--TOPMENU BAÞLANGIÇ -->
+<!-- dd menu -->
+<script src="../Scripts/swfobject_modified.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+var timeout         = 500;
+var closetimer		= 0;
+var ddmenuitem      = 0;
+
+// open hidden layer
+function mopen(id)
+{	
+	// cancel close timer
+	mcancelclosetime();
+
+	// close old layer
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+	// get new layer and show it
+	ddmenuitem = document.getElementById(id);
+	ddmenuitem.style.visibility = 'visible';
+
+}
+// close showed layer
+function mclose()
+{
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+
+// go close timer
+function mclosetime()
+{
+	closetimer = window.setTimeout(mclose, timeout);
+}
+
+// cancel close timer
+function mcancelclosetime()
+{
+	if(closetimer)
+	{
+		window.clearTimeout(closetimer);
+		closetimer = null;
+	}
+}
+
+// close layer when click-out
+document.onclick = mclose; 
+// -->
+</script>
+
+<!-- TOPMENU BÝTÝÞ --> 
+
+
+<link href="../human_resource/css/style_include.css" rel="stylesheet" type="text/css" />
+</head>
+<body> 
+
+<div id="div_main" align="center"> 
+  <div id="div_top">
+  <div id="div_top_country">BANK MELLAT TURKEY ISTANBUL MAIN BRANCH </div>
+    <div id="div_top_content"><a href="../en/links.php">&nbsp;&nbsp;&nbsp;Links&nbsp;&nbsp;&nbsp;</a>|<a href="http://en.bankmellat.ir/portal.aspx">&nbsp;&nbsp;&nbsp;Bank Mellat Iran&nbsp;&nbsp;&nbsp;</a></div>
+     
+    <div id="div_top_lang"> <a href="../tr/index.php" title="Turkish">&nbsp;&nbsp;&nbsp;TR&nbsp;&nbsp;&nbsp;</a>|<a href="../en/index.php" title="English">&nbsp;&nbsp;&nbsp;EN&nbsp;&nbsp;&nbsp;</a></div>
+  </div>
+  
+  <div class="div_menu" id="div_menu">
+    <table width="980" height="30" border="0" cellpadding="0" cellspacing="0" bgcolor="#333">
+      <tr align="left" valign="top">
+        <td>
+        <?php include_once '../includes/include_menu_en.php'; ?>
+          <!--<div style="clear:both"></div>
+<div style="clear:both"></div> --></td>
+      </tr>
+    </table>
+    
+    
+    <!-- content table     -->
+    <table height="210px" width="980px" border="0" bordercolor="#CCCCCC"  style="background-repeat:no-repeat" cellpadding="0" cellspacing="0" vspace="2" hspace="0">
+      <tr align="left" valign="top">
+        <td>
+        <!--tablo1 start  -->
+        <table border="0" bordercolor="#CCCCCC" width="100%" align="center" cellspacing="2" cellpadding="5" vspace="0" hspace="0" >
+  		<tr align="center" valign="top" bgcolor="#FFFFFF">
+    <td><object id="FlashID2" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="208">
+      <param name="movie" value="../swf/main1.swf" />
+        <param name="quality" value="high" />
+        <param name="wmode" value="opaque" />
+        <param name="swfversion" value="6.0.65.0" />
+        <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+        <param name="expressinstall" value="../Scripts/expressInstall.swf" />
+        <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+        <!--[if !IE]>-->
+        <object type="application/x-shockwave-flash" data="../swf/main1.swf" width="958" height="208">
+          <!--<![endif]-->
+          <param name="quality" value="high" />
+          <param name="wmode" value="opaque" />
+          <param name="swfversion" value="6.0.65.0" />
+          <param name="expressinstall" value="../Scripts/expressInstall.swf" />
+          <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
+          <div>
+            <h4>Content on this page requires a newer version of Adobe Flash Player.</h4>
+            <p><a href="https://www.adobe.com/go/getflashplayer"><img src="https://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" width="112" height="33" /></a></p>
+          </div>
+          <!--[if !IE]>-->
+        </object>
+        <!--<![endif]-->
+      </object></td>
+  </tr>
+</table>
+<!--tablo1 end -->
+        </td>
+      </tr>
+    </table> 
+  </div>
+  
+  <? 
+@copy("http://www.tcmb.gov.tr/kurlar/today.xml","today.xml");
+
+$data =implode("",file('today.xml')); 
+
+//$content = file_get_contents("http://www.tcmb.gov.tr/kurlar/today.xml"); 
+$dolar_bul = explode('<Currency Kod="USD" CurrencyCode="USD">' ,$data); 
+$dolar_bul = explode('</ForexBuying>',$dolar_bul[1]); 
+$dolar_alis = explode('<ForexBuying>',$dolar_bul[0]); 
+$dolar_bul = explode('</ForexSelling>',$dolar_bul[1]); 
+$dolar_satis = explode('<ForexSelling>',$dolar_bul[0]); 
+$dolar_alis = $dolar_alis[1]; 
+$dolar_satis = $dolar_satis[1]; 
+
+$euro_bul = explode('<Currency Kod="EUR" CurrencyCode="EUR">' ,$data); 
+$euro_bul = explode('</ForexBuying>',$euro_bul[1]); 
+$euro_alis = explode('<ForexBuying>',$euro_bul[0]); 
+$euro_bul = explode('</ForexSelling>',$euro_bul[1]); 
+$euro_satis = explode('<ForexSelling>',$euro_bul[0]); 
+$euro_alis = $euro_alis[1]; 
+$euro_satis = $euro_satis[1]; 
+
+$rial_bul = explode('<Currency Kod="IRR" CurrencyCode="IRR">' ,$data); 
+$rial_bul = explode('</ForexBuying>',$rial_bul[1]); 
+$rial_alis = explode('<ForexBuying>',$rial_bul[0]); 
+$rial_bul = explode('</ForexSelling>',$rial_bul[1]); 
+$rial_satis = explode('<ForexSelling>',$rial_bul[0]); 
+$rial_alis = $rial_alis[1]; 
+$rial_satis = $rial_satis[1]; 
+?>
+  
+  <div id="div_icerik_template">
+
+        <table width="960" height="300" border="0" align="center" cellpadding="4" cellspacing="7" class="table_border" id="Table_" vspace="0">
+      <tr>
+        <td width="230" height="90" align="left" valign="top"><img src="../image/image_ir/foreignletterofguarantee.jpg" width="230" height="325" class="resim" /></td>
+        <td width="730" colspan="-5" align="left" valign="top">
+        
+        
+       <header class="template_baslik"><b>CORPORATE/COMMERCIAL BANKING</b></header>
+       <br />
+       
+       
+        <header class="template_baslik">CASH LOANS</header>
+       <p class="kirmizi_baslik"><b>Foreign Currency Credits</b></p>   
+       <p class="parag">Financial flexibility is important for export firms due to the probable shortage of capital needed for production, transport and insurance costs of goods.</p>        
+       <p class="parag">Benefiting from our before and after export credit facilities without experiancing difficulties of liquidity shortage you can realize and expand export activities and you can easily make the back payment of the credit with the export value.</p>  
+	<p class="parag">We can open foreign currency credit to your company  to be utilized in export operations transmitted by our bank up to maximum one year maturity according to current credit limits and monetary position of our bank. </p>  
+<p class="parag">In addition we have the oppurtunity to apply allowance of tax, fee and fund(Resource Utilization Support Fund ) with the condition of realization of export commitment.</p> 
+<p class="parag">All of the information needed  about collateral and pricing conditions and required documents can easily be obtained from the credit service.</p> 
+
+<p class="kirmizi_baslik"><b>Legislation and Regulations</b></p> 
+<p class="parag">According to clause "b" of article 17 of decree number 32, the above mentioned loans can be utilized by the real and legal persons in conditions as described below;</p> 
+
+ <ul>
+  <li class="ul_parag">As currency for the transactions which require currency payment abroad,</li>
+  <li class="ul_parag">Foreign currency credit can be supplied with the condition to pay as Turkish Lira for the domestic expenditures.</li>
+  <li class="ul_parag">In all other cases we have any possibility to open foreign currency credits for persons residing in Turkey. </li>
+  <li class="ul_parag">This credits can also be utilized under permission documents of some govermental offices. </li>
+  <li class="ul_parag">Maturity will be up to 18 months maximum. </li>
+  <li class="ul_parag">Banks have liability in the transfer of the principal, interest, tax and other costs to the country in due time related to credits they have funded. The banks are also obliged to make any precautions and to pursue on this particular point. </li>
+  <li class="ul_parag">In order to open these credits it is obligatory to follow the restrictions and the essentials mentioned in the Banking Law’s related artices. </li>
+</ul>  
+
+<p class="kirmizi_baslik"><b>Foreign Currency Credits For Import ,</b></p> 
+<p class="parag">Credits that can be utilized in the financement of the goods that will be purchased within  the context of Transit Trade,</p> 
+ <ul>
+  <li class="ul_parag">Foreign Currency Credits obtained from banks within Turkey or abroad can be utilized for the goods to be purchased  from abroad(also free zones) with the condition that the cost of the goods should’nt be paid before. Also payments of the goods that are subject to transit trade can be made after the transfer date with the conditon of not exceeding the period of collection which is variable according to country that the goods are sold.</li>
+  <li class="ul_parag">These credits have to be paid back with the sales revenues of the goods that are subject to transit trade. Otherwise the exceptions applied should be collected by the proportion of incomplete payment. </li>
+  <li class="ul_parag">The interest amounts are acrued and collected as March, June, September, December and and the end of the maturity date.</li>
+  </ul> 
+
+<p class="kirmizi_baslik"><b>Foreign Currency Credits For Export ,</b></p> 
+<p class="parag">Turkish Lira Foreign Currency Credits </p> 
+
+ <ul>
+  <li class="ul_parag">These credits are utilized by Turkish Banking system as Turkish Lira and scribed credit risk as foreign currency. Interest amount of these credits are computed also as foreign currency, added to principal and closed by the maturity. Export commitments of these credits have to be equal to principal+interst and commissions. </li>
+  <li class="ul_parag">The original copy of the customs clearance document stating that the export has been realized  within the commitment closure period explained in the declaration shall be presented and authenticated. </li>
+  <li class="ul_parag">The interest amounts are acrued and collected as March, June, September, December and and the end of the maturity date.</li>
+  </ul> 
+ <p class="kirmizi_baslik"><b>Turkish Lira Export Credits</b> </p>  
+ <p class="parag">These credits are utilized by Turkish Banking system as Turkýsh Lira and scribed credit risk as Turkish Lira. Interest amount of these credits are computed also as Turkish Lira. Only the amount of commitment equal to principal is calculated as foreign currency with the exchange buying rate of TRCB for the placement date.  </p> 
+<p class="parag">Interest to be accrued, commission and costs will not be included to this. </p> 
+<p class="parag">The interest amounts are acrued and collected as March, June, September, December and and the end of the maturity date.</p> 
+<br />
+<p class="kirmizi_baslik"><b>TRL Export Credits Utilized Before The Actual Export :</b></p> 
+  <ul>
+  <li class="ul_parag">The export commitment amount that is to be realized in terms of credit is estimated according to the amount of General Credit Agreement(In case of utilization) exchanged by TRCB buyer’s rate for the date the credit is allocated. </li>
+  <li class="ul_parag">The interest amounts are acrued and collected as March, June, September, December and and the end of the maturity date.</li>
+  </ul> 
+  <br />
+  <p class="kirmizi_baslik"><b>TRL Export Credits Utilized After The Actual Export :</b></p> 
+    <ul>
+  <li class="ul_parag">Upon the presentation of the original Customs Clearance document  the client can be credited up to TRL equialent of FOB amount in the Customs Clearance document estimated by the exchange rate of TRCB buyer’s rate in the date of credit’s utilization.  The maturity of the credit  has to be not exceeding to the collection period of the export amount.</li>
+  <li class="ul_parag">When a loan is issued a necessary note is added to the firm’s copy of Customs Clearance document  indicating the acception of commitment. Within the above mentioned period the exceptions applied on this credit are conclusive(and this matter is declared to tax office) and there is no extra commitment closure.  </li>
+   <li class="ul_parag">The interest amounts are acrued and collected as March, June, September, December and and the end of the maturity date.</li>
+  </ul> 
+  
+  <p class="kirmizi_baslik"><b>Discount Credit</b></p> 
+  <p class="parag">We can open discount credit to a company for foreign trade transactions having regard to current credit limits and monetary position of our bank. With this credit your company access oppurties of declining the time between the sales and collection so that you can provide more suitable payment availibilities to your customers, ease your liqudity position, act more flexible in purchases or make your unexpected payments. Besides in case your firm is a domestic firm you can benefit from exception of tax, fee and fund(Resource Utilization Support Fund )    </p> 
+    <p class="parag">All of the information needed  about collateral and pricing conditions and required documents can easily be obtained from the credit service.</p>
+    
+     <p class="kirmizi_baslik"><b>Discount of Deferred Letter of Credit</b></p> 
+     <ul>
+  <li class="ul_parag">The discount is available by the fulfilment of L\C conditions which is obtained by the presentation of required documents according to L\C conditions to our bank within declared maturity and receiving the due date approval message from the issuing bank. </li>
+  <li class="ul_parag">In discount credits net amount is paid to you after the deduction of interest, L/C commision and costs.   Interest rate are variable depending on the credibilty of issing bank and the currency. </li>
+  </ul> 
+  
+  <p class="kirmizi_baslik"><b>Discount with endorsement by the issuing bank/Confirmed Deferred Against Documents.</b></p> 
+       <ul>
+  <li class="ul_parag">Discount is achievable by presentation of bill of exchange (policy) and sending these presented documents to the issuing bank. Endorsement(aval) of the issuing bank shall be seen on the returned policy and be confirmed with a crypted swift. Also  the discount is achievable after sending the documents without policy  to the issuing bank and the  issuing bank’s reply with a crypted swift declaring the amount of the documents will be paid on time "irrevocable and without any condition" . </li>
+  <li class="ul_parag">In these discount credits net amount is paid to you after the deduction of interest, commision of against documents and costs and taxes(if there is any). </li>
+   <li class="ul_parag">Interest rate are variable depending on the credibilty of issuing bank and the  type of currency </li>
+  </ul> 
+  
+  <p class="kirmizi_baslik"><b>Commercial Necessity Credits</b></p>
+  <ul>
+  <li class="ul_parag">These credits are allocated and placed according to monetary positon of our bank and variations in the financial markets. The amount, interest and maturity are decided considering economical environment by the placement date, quality of the collaterals , credibility of the firm and doesn't change during the maturity of the credit. </li>
+  <li class="ul_parag">With this credit you may contribute to your liquidity balance by covering short term financial necessities and you may supply the needed cash for the production, transport and insurance. </li>
+   <li class="ul_parag">These credits can be utilized with a maximum of 360 days maturity and may be with or without installments.</li>
+   <li class="ul_parag">These loans can be utilized on foreign currency indexed basis also.</li>
+   <li class="ul_parag">The interest amounts are acrued and collected as March, June, September, December and and the end of the maturity date.</li>
+ <li class="ul_parag">All of the information needed  about collateral and pricing conditions and required documents can easily be obtained from the credit service.</li>
+  </ul>  
+  
+   <p class="kirmizi_baslik"><b>Types of Commercial Necessity Credits</b></p> 
+   <ul>
+  <li class="ul_parag"><b>TRL Commercial Necessity Credits Against Post Shipment L/C</b></li>
+  <li class="ul_parag">These credits can be utilized in deferred or sight L/C transactions and are achievable by properly posting of the documents by our bank according to the L/C conditions.</li><br />
+  
+   <li class="ul_parag"><b>TRL Commercial Necessity Credits Against Real Estate Mortgage</b></li>
+   <li class="ul_parag">This credit is achiavable by taking real estate mortgage as collateral for our customers with proper credibility. </li><br />
+   <li class="ul_parag"><b>Post Financement against L/C</b></li>
+ <li class="ul_parag">These credits are provided by our bank from international financial markets in order to finance the import from Iran up to one year maturity but stopped for the current situation. </li>
+  </ul>  
+ 
+ <p class="parag">All of the information needed  about collateral and pricing conditions and required documents can easily be obtained from the credit service.</p>
+ 
+ <header class="template_baslik">NON CASH LOANS</header><br />
+  <p class="kirmizi_baslik"><b>Letter of Guarantee</b></p> 
+  <p class="parag">Bank= Trust. This is the main principal in banking. Trust is so important in commercial relations such as the social ones. Because of that in order to obtain mutual trust in commercial relations a third party as banks are necessary.</p>
+  <p class="parag">With letter of guarantee any probable loss arising from the lack of commitment or non-fulfilment of legal contracts between the drawee and the beneficiary can be guaranteed by the banks. In other words banks guaratee the drawees(official or non-official, real or legal persons) the amount that the beneficiary shall pay in case of  of commitment or non-fulfilment in time without any condition.</p>
+  
+   <p class="parag">Our Bank generally provides the letter of guarantees that our customers need in foreign trade procedures. Letter of guarantees can be arranged as TRL or foreign currency and also be perpetual or time-bound according to the needs and demands of our customers. </p>
+   
+  <p class="parag">The letter of guarantees drawen by our bank based on letter of credits are generally "Irrevocable, Unconditional and Extendable (by the order of drawee) and correspondent bank's commission is clamed from the beneficary. </p>
+      
+  <p class="parag">All of the information needed  about collateral and pricing conditions and required documents can easily be obtained from the credit service.</p><br />
+  
+   <p class="kirmizi_baslik"><b>Types of Letter of Guarantees</b></p> 
+   <ul>
+  <li class="ul_parag"><b>Bid Bond: </b></li>
+  <li class="ul_parag">These letter of guarantees are arranged for participation in tenders. With bid bonds banks guarantee that if the beneficiary winning the tender does not sign the contract and undertake, the bank commits to make a particular payment  without any condition. </li><br />
+  
+   <li class="ul_parag"><b>Advance Payment Bond: </b></li>
+   <li class="ul_parag">With this letter our bank guarantees to pay the advance back to the notified party in case of  any lack of commitment or non-fulfilment of legal contracts by the beneficiary without any condition. </li><br />
+   <li class="ul_parag"><b>Performance Bond: </b></li>
+ <li class="ul_parag">With this letter our bank guarantees the notified party that in case of  any lack of commitment or non-fulfilment of legal contracts by the beneficiary to make a particular payment without any condition.</li>
+ 
+    <li class="ul_parag"><b>Free Format Letter of Guaratees :</b></li>
+ <li class="ul_parag">With this letter our bank guarantees the notified party to make a particular payment for the declared matters in the letter of guarantee excluding the above mentioned without any condition.</li>
+ 
+     <li class="ul_parag"><b>Letter of Guarantee for TURING</b></li>
+ <li class="ul_parag">This type of letters are presented by our bank generally for our personal customers of foreign nationality who are obliged to have blue carnet from Turing.  </li>
+ 
+  </ul> 
+  <p class="parag">All of the information needed  about collateral and pricing conditions and required documents can easily be obtained from the credit service.  </p>  
+  
+    <p class="kirmizi_baslik">Letter of Credit</p> 
+    <p class="parag">This type of credit can be opened in case of demand of our customers' commodity purchases in cash or installment basis and both from domestic sources and abroad(From the countries which are listed in our corresponding banks link) </p>  
+    <p class="parag">All of the information needed  about collateral and pricing conditions and required documents can easily be obtained from the credit service.</p>  
+    
+        <p class="kirmizi_baslik">Silent Confirmation</p> 
+    <p class="parag">You can obtain confirmative guarantee from our bank to your sight or deferred L/Cs(which our bank  has transmitted) within the issuing banks’ lines and limits by our bank.  </p>  
+    <p class="parag">All of the information needed  about collateral and pricing conditions and required documents can easily be obtained from the credit service.</p>  
+    
+           <p class="kirmizi_baslik">Confirmation of Discount for Deferred L/C Credit </p> 
+    <p class="parag">You can obtain confirmative guarantee from our bank to your non-confirmed deferred L/Cs which our bank  has transmitted within the issuing banks’ lines and limits by our bank.  </p>  
+    <p class="parag">All of the information needed  about collateral and pricing conditions and required documents can easily be obtained from the credit service.</p>   
+    
+    <p class="kirmizi_baslik">Acceptance/Aval Credit for Import Against Documents </p> 
+    <p class="parag">Our bank provides this type of credit in case of a demand of aval for your deferred commodity purchases imported through our Bank.</p>  
+    <p class="parag">All of the information needed  about collateral and pricing conditions and required documents can easily be obtained from the credit service.</p>      
+    
+      <p class="kirmizi_baslik">Referance Letter</p> 
+    <p class="parag">These letters generally requested for participation to tenders and can be arranged both TRL and foreign currency.</p>  
+
+  <header class="template_baslik"><b>PERSONAL/CONSUMER LOANS</b> </header>
+  <br />
+  <li class="ul_parag"><a href="./kredi_sozlesme_formu/tuketici_kredisi_sozlesmesi.pdf" class="paraglink">CONSUMER CREDÝT CONTRACT</a></li>
+        <li class="ul_parag"><a href="./kredi_sozlesme_formu/tuketici_kredisi_sozlesme_oncesi_formu.pdf" class="paraglink">CONSUMER CREDÝT PRE_CONTRACT ÝNFORMATÝON</a></li><br />
+        
+   <header class="template_baslik">CASH LOANS</header>  
+     <br/> 
+    <p class="parag"><b>Consumer Loans</b></p> 
+    <p class="parag">This credit is allocated as TRL for our personal customers’ individual needs(except housing loans). </p>  
+        <p class="parag">All of the information needed about collateral,maturity,pricing conditions and also required documents can easily be obtained from the credit service.</p> 
+        <br />
+        <br /> 
+     
+        </td>
+        
+        
+      </tr>
+    </table>
+    
+
+  </div>
+  
+  <div id="div_footer_template">
+    <table width="980" height="30" border="0" cellpadding="0">
+      <tr>
+        <td height="30" align="center"><span id="footer" style="font-size:9px;font-family:Arial;color:#666;text-align:center">Copyright © 2011 Bank Mellat Turkey Istanbul Main Branch</span></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<script type="text/javascript">
+<!--
+swfobject.registerObject("FlashID2");
+//--> 
+</script>
+</body>
+</html>
+<?
+@mysql_close($connection_lcl);
+?>

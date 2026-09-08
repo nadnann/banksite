@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+td:nth-child(2){
+	 align:right;
+	 width:43;
+}
+td nth-child(3){
+	width:52;
+}
+
+td nth-child(4){
+	width:392;
+	
+}
+td nth-child(5){
+	width:114;
+}
+td nth-child(7){
+	width:52;
+	
+}
+td nth-child(8){
+	width:63;
+	
+}
+td nth-child(9){
+	 align:right;
+	 width:71;
+}

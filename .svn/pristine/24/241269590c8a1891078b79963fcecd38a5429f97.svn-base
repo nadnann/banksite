@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rc_finansal_sil" value="name:aciklama;datatype:string,name:eklenme_tarihi;datatype:datetime" />
+</info>
