@@ -23,9 +23,14 @@ jobs:
       - name: Show PHP version
         run: php -v
 
+      - name: Create Composer project
+        run: |
+          composer init --no-interaction
+
       - name: Install Rector
         run: |
           composer require --dev rector/rector --no-interaction --prefer-dist
 
       - name: Run Rector - dry run
-        run: vendor/bin/rector process --dry-run
+        run: |
+          vendor/bin/rector process --dry-run
