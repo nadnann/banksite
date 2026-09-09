@@ -1,33 +1,31 @@
-name: Upgrade to PHP 8.2
+name: PHP 8.2 Compatibility Check
 
 on:
-  workflow_dispatch: # Actions sekmesinden manuel tetiklemek için
+  workflow_dispatch:
 
 jobs:
   rector:
     runs-on: ubuntu-latest
+
     permissions:
-      contents: write
-      pull-requests: write
+      contents: read
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup PHP
+      - name: Setup PHP 8.2
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          tools: rector
+          coverage: none
 
-      - name: Run Rector
-        run: rector process
+      - name: Show PHP version
+        run: php -v
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "refactor: upgrade code to PHP 8.2"
-          title: "Upgrade to PHP 8.2 with Rector"
-          body: "This PR automatically refactors deprecated PHP 7.2 syntax to PHP 8.2 using Rector."
-          branch: "upgrade-php-8-2"
+      - name: Install Rector
+        run: |
+          composer require --dev rector/rector --no-interaction --prefer-dist
+
+      - name: Run Rector - dry run
+        run: vendor/bin/rector process --dry-run
