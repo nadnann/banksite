@@ -31,24 +31,6 @@ jobs:
         run: |
           composer require --dev rector/rector --no-interaction --prefer-dist
 
-      - name: Run Rector dry-run
+      - name: Run Rector - dry run
         run: |
-          set +e
-          vendor/bin/rector process --dry-run --output-format=console > rector-output.txt 2>&1
-          RECTОR_EXIT_CODE=$?
-          echo "Rector exit code: $RECTОR_EXIT_CODE"
-
-          echo ""
-          echo "========== RECTOR OUTPUT =========="
-          cat rector-output.txt
-          echo "========== END RECTOR OUTPUT =========="
-
-          exit 0
-
-      - name: Upload Rector report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: rector-php82-report
-          path: rector-output.txt
-          if-no-files-found: warn
+          vendor/bin/rector process --dry-run
