@@ -30,7 +30,14 @@ jobs:
       - name: Install Rector
         run: |
           composer require --dev rector/rector --no-interaction --prefer-dist
-
       - name: Run Rector - dry run
         run: |
-          vendor/bin/rector process --dry-run
+          vendor/bin/rector process --dry-run --output-format=console 2>&1 | tee rector-output.txt
+        continue-on-error: true
+
+      - name: Upload Rector report
+        uses: actions/upload-artifact@v4
+        with:
+          name: rector-report
+          path: rector-output.txt
+     
