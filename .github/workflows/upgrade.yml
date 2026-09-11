@@ -23,21 +23,23 @@ jobs:
       - name: Show PHP version
         run: php -v
 
-      - name: Create Composer project
+      - name: Create temporary Composer project
         run: |
           composer init --no-interaction
 
       - name: Install Rector
         run: |
-          composer require --dev rector/rector --no-interaction --prefer-dist
+          composer require --dev rector/rector:2.6.6 --no-interaction --prefer-dist
+
       - name: Run Rector - dry run
+        continue-on-error: true
         run: |
           vendor/bin/rector process --dry-run --output-format=console 2>&1 | tee rector-output.txt
-        continue-on-error: true
 
       - name: Upload Rector report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: rector-report
           path: rector-output.txt
-     
+          if-no-files-found: warn
