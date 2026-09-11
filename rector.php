@@ -3,30 +3,37 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
+use Rector\Php80\Rector\Class_\ClassPropertyAssignToConstructorPromotionRector;
 use Rector\Php80\Rector\Switch_\ChangeSwitchToMatchRector;
-use Rector\Set\ValueObject\LevelSetList;
+use Rector\Php70\Rector\FuncCall\RandomFunctionRector;
 
 return RectorConfig::configure()
     ->withPaths([
         __DIR__,
     ])
     ->withSets([
-        LevelSetList::UP_TO_PHP_82,
+        \Rector\Set\ValueObject\LevelSetList::UP_TO_PHP_82,
     ])
     ->withSkip([
-        // Legacy kodda switch -> match dönüşümünü şimdilik yapma.
-        // 75 dosyada değişiklik oluşturuyor.
+        // Legacy switch/case yapısını match'e dönüştürme.
         ChangeSwitchToMatchRector::class,
 
-        // Rector'un kendi dosyalarını ve bağımlılıklarını tarama
+        // rand() -> random_int() dönüşümünü şimdilik yapma.
+        RandomFunctionRector::class,
+
+        // Constructor property promotion'ı şimdilik yapma.
+        ClassPropertyAssignToConstructorPromotionRector::class,
+
+        // Git / Composer / Node
         __DIR__ . '/.git',
         __DIR__ . '/.github',
         __DIR__ . '/vendor',
+        __DIR__ . '/node_modules',
 
-        // Syntax hataları bulunan legacy klasör
+        // Syntax problemi bulunan eski klasör
         __DIR__ . '/tr',
 
-        // PHP kodu olmayan klasörler
+        // PHP olmayan / legacy asset klasörleri
         __DIR__ . '/css',
         __DIR__ . '/css_menu',
         __DIR__ . '/font',
